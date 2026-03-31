@@ -2389,17 +2389,18 @@ section,
 # Contact Section
 --------------------------------------------------------------*/
 .contact .info-box {
-  background-color: var(--accent-color);
-  color: var(--contrast-color);
-  padding: 3rem;
+  background-color: var(--surface-color);
+  color: var(--default-color);
+  padding: 2rem;
   border-radius: 1rem;
   height: 100%;
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
 }
 
 .contact .info-box h3 {
-  color: var(--contrast-color);
-  font-size: 2rem;
-  margin-bottom: 1rem;
+  color: var(--heading-color);
+  font-size: 1.6rem;
+  margin-bottom: 0.75rem;
 }
 
 @media (max-width: 767.98px) {
@@ -2409,12 +2410,13 @@ section,
 }
 
 .contact .info-box p {
-  opacity: 0.8;
-  margin-bottom: 2rem;
+  opacity: 0.7;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
 }
 
 .contact .info-box a {
-  color: var(--contrast-color);
+  color: var(--accent-color);
 }
 
 @media (max-width: 992px) {
@@ -2425,8 +2427,8 @@ section,
 
 .contact .info-item {
   display: flex;
-  gap: 1.5rem;
-  margin-bottom: 2rem;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
 }
 
 .contact .info-item:last-child {
@@ -2434,9 +2436,9 @@ section,
 }
 
 .contact .info-item .icon-box {
-  width: 3.5rem;
-  height: 3.5rem;
-  background-color: color-mix(in srgb, var(--contrast-color), transparent 85%);
+  width: 3rem;
+  height: 3rem;
+  background-color: color-mix(in srgb, var(--accent-color), transparent 92%);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -2446,24 +2448,29 @@ section,
 }
 
 .contact .info-item .icon-box i {
-  font-size: 1.5rem;
-  color: var(--contrast-color);
+  font-size: 1.25rem;
+  color: var(--accent-color);
 }
 
 .contact .info-item:hover .icon-box {
-  background-color: color-mix(in srgb, var(--contrast-color), transparent 70%);
+  background-color: var(--accent-color);
+}
+
+.contact .info-item:hover .icon-box i {
+  color: var(--contrast-color);
 }
 
 .contact .info-item .content h4 {
-  color: var(--contrast-color);
-  font-size: 1.25rem;
-  margin-bottom: 0.5rem;
-  font-weight: 700;
+  color: var(--heading-color);
+  font-size: 1.1rem;
+  margin-bottom: 0.25rem;
+  font-weight: 600;
 }
 
 .contact .info-item .content p {
-  margin-bottom: 0.25rem;
-  font-size: 0.95rem;
+  margin-bottom: 0;
+  font-size: 0.9rem;
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
 }
 
 .contact .info-item .content p:last-child {
@@ -2472,9 +2479,10 @@ section,
 
 .contact .contact-form {
   background-color: var(--surface-color);
-  padding: 3rem;
+  padding: 2rem;
   border-radius: 1rem;
   height: 100%;
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.05);
 }
 
@@ -2485,8 +2493,8 @@ section,
 }
 
 .contact .contact-form h3 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
+  font-size: 1.6rem;
+  margin-bottom: 0.75rem;
 }
 
 @media (max-width: 768px) {
@@ -2496,8 +2504,9 @@ section,
 }
 
 .contact .contact-form p {
-  color: color-mix(in srgb, var(--default-color), transparent 25%);
-  margin-bottom: 2rem;
+  color: color-mix(in srgb, var(--default-color), transparent 35%);
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
 }
 
 .contact .contact-form .form-control,
@@ -3778,3 +3787,169 @@ section,
     display: none !important;
   }
 }
+
+/*--------------------------------------------------------------
+# Technologies & Tools Section
+--------------------------------------------------------------*/
+.tech-tools {
+  padding: 80px 0;
+  background-color: var(--background-color);
+  overflow: hidden;
+}
+
+.tech-tools .section-title {
+  padding-bottom: 20px;
+}
+
+.marquee-container {
+  position: relative;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  padding: 50px 0;
+  background: color-mix(in srgb, var(--accent-color), transparent 97%);
+  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 92%);
+  border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 92%);
+  overflow: hidden;
+}
+
+.marquee-content {
+  display: flex;
+  gap: 80px;
+  animation: marquee 40s linear infinite;
+  white-space: nowrap;
+  width: max-content;
+}
+
+.marquee-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  font-family: var(--heading-font);
+  font-size: 1.4rem;
+  font-weight: 600;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.marquee-item:hover {
+  color: var(--accent-color);
+  transform: translateY(-5px);
+}
+
+.marquee-item i {
+  font-size: 2.8rem;
+  transition: all 0.4s ease;
+}
+
+.marquee-item:hover i {
+  transform: scale(1.1) rotate(5deg);
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Smooth fade effect on edges */
+.marquee-container::before,
+.marquee-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 150px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.marquee-container::before {
+  left: 0;
+  background: linear-gradient(to right, var(--background-color), transparent);
+}
+
+.marquee-container::after {
+  right: 0;
+  background: linear-gradient(to left, var(--background-color), transparent);
+}
+
+.marquee-container:hover .marquee-content {
+  animation-play-state: paused;
+}
+
+[data-theme="dark"] .marquee-container {
+  background: rgba(255, 255, 255, 0.02);
+}
+/* Achievements & Certifications in About Section */
+.about-extra-info {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+.info-card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--accent-color);
+}
+
+.card-icon {
+  font-size: 1.8rem;
+  color: var(--accent-color);
+}
+
+.card-details .number {
+  display: block;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--default-color);
+}
+
+.card-details .label {
+  font-size: 0.9rem;
+  color: color-mix(in srgb, var(--default-color), transparent 40%);
+}
+
+.certifications-box h4 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.badge-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill-badge {
+  padding: 6px 15px;
+  background: color-mix(in srgb, var(--accent-color), transparent 90%);
+  color: var(--accent-color);
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  border: 1px solid color-mix(in srgb, var(--accent-color), transparent 80%);
+  transition: all 0.3s ease;
+}
+
+.skill-badge:hover {
+  background: var(--accent-color);
+  color: #fff;
+  transform: scale(1.05);
+}
+
+[data-theme='dark'] .info-card {
+  background: rgba(255, 255, 255, 0.02);
+}
+
