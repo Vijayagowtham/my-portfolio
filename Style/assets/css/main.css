@@ -1109,9 +1109,18 @@ section,
   border: 1px solid color-mix(in srgb, var(--accent-color), transparent 85%);
 }
 
-.about .about-content .cta-section .fun-fact .emoji {
-  font-size: 20px;
+.about .about-content .cta-section .fun-fact .fun-fact-icon {
+  font-size: 22px;
   margin-right: 10px;
+  color: var(--accent-color);
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: color-mix(in srgb, var(--accent-color), transparent 88%);
+  border-radius: 50%;
+  flex-shrink: 0;
 }
 
 .about .about-content .cta-section .fun-fact .text {
@@ -4216,5 +4225,572 @@ html, body {
   }
   .achievements .achieve-title {
     font-size: 1.1rem;
+  }
+}
+
+/*--------------------------------------------------------------
+# Highlighted View Certificates Button
+--------------------------------------------------------------*/
+.achievements .achieve-btn-certificate {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.6rem 1.35rem;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  letter-spacing: 0.3px;
+  /* Vibrant gradient background */
+  background: linear-gradient(135deg, #297df3 0%, #0055cc 100%);
+  color: #ffffff;
+  border: 2px solid transparent;
+  /* Eye-catching glow shadow */
+  box-shadow: 0 4px 18px rgba(41, 125, 243, 0.55),
+              0 1px 4px rgba(0, 0, 0, 0.18);
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  overflow: hidden;
+}
+
+.achievements .achieve-btn-certificate::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -60%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.25),
+    transparent
+  );
+  transform: skewX(-20deg);
+  transition: left 0.6s ease;
+}
+
+.achievements .achieve-btn-certificate:hover::before {
+  left: 140%;
+}
+
+.achievements .achieve-btn-certificate:hover {
+  background: linear-gradient(135deg, #3d8ff5 0%, #1a6ee0 100%);
+  color: #ffffff;
+  transform: translateY(-3px) scale(1.04);
+  box-shadow: 0 8px 28px rgba(41, 125, 243, 0.65),
+              0 2px 8px rgba(0, 0, 0, 0.22);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.achievements .achieve-btn-certificate i {
+  font-size: 1rem;
+  filter: drop-shadow(0 0 3px rgba(255,255,255,0.5));
+}
+
+/* Dark mode adaptation */
+[data-theme="dark"] .achievements .achieve-btn-certificate {
+  background: linear-gradient(135deg, #4a9ff5 0%, #297df3 100%);
+  box-shadow: 0 4px 20px rgba(74, 159, 245, 0.5),
+              0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .achievements .achieve-btn-certificate:hover {
+  background: linear-gradient(135deg, #62b0f7 0%, #3d8ff5 100%);
+  box-shadow: 0 8px 30px rgba(74, 159, 245, 0.65);
+}
+
+/*--------------------------------------------------------------
+# Full Responsive Design – All Breakpoints
+--------------------------------------------------------------*/
+
+/* ---- Ultra-Wide (1600px+) ---- */
+@media (min-width: 1600px) {
+  .hero .content-wrapper {
+    max-width: 680px;
+  }
+  .hero .hero-title {
+    font-size: 4rem;
+  }
+  .section-title h2 {
+    font-size: 42px;
+  }
+  .marquee-item {
+    font-size: 1.6rem;
+  }
+  .marquee-item i {
+    font-size: 3.2rem;
+  }
+  .proj-card-img {
+    height: 250px;
+  }
+}
+
+/* ---- Desktop (1200-1599px) ---- */
+@media (min-width: 1200px) and (max-width: 1599px) {
+  .navmenu a,
+  .navmenu a:focus {
+    padding: 8px 14px;
+    font-size: 14px;
+  }
+}
+
+/* ---- Laptop / Large Tablet (992-1199px) ---- */
+@media (max-width: 1199px) {
+  .header .logo h1 {
+    font-size: 22px;
+  }
+  .hero {
+    padding: 100px 0 80px;
+  }
+  .hero .hero-title {
+    font-size: 3rem;
+  }
+  .about .about-content .intro h2 {
+    font-size: 2.2rem;
+  }
+}
+
+/* ---- Tablet (768-991px) ---- */
+@media (max-width: 991px) {
+  /* Header */
+  .header {
+    padding: 12px 0;
+  }
+  .header .logo h1 {
+    font-size: 20px;
+    letter-spacing: 1px;
+  }
+
+  /* Hero */
+  .hero {
+    padding: 90px 0 60px;
+    min-height: auto;
+  }
+  .hero .row {
+    flex-direction: column-reverse;
+  }
+  .hero .hero-content {
+    text-align: center;
+    padding: 40px 20px 20px;
+  }
+  .hero .hero-title {
+    font-size: 2.6rem;
+  }
+  .hero .hero-stats {
+    justify-content: center;
+    gap: 1.5rem;
+  }
+  .hero .hero-actions {
+    justify-content: center;
+  }
+  .hero .social-links {
+    justify-content: center;
+  }
+  .hero .hero-image {
+    padding: 20px 30px 0;
+  }
+  .hero .image-container {
+    max-width: 380px;
+    margin: 0 auto;
+  }
+
+  /* Section title */
+  .section-title h2 {
+    font-size: 30px;
+  }
+  .section-title p {
+    font-size: 15px;
+  }
+
+  /* Skills */
+  .skills .skills-summary {
+    margin-top: 30px;
+    position: static;
+  }
+
+  /* Projects */
+  .proj-card-img {
+    height: 200px;
+  }
+
+  /* Certifications & Achievements */
+  .certifications .cert-card,
+  .achievements .achieve-card {
+    padding: 2rem 1.5rem;
+  }
+
+  /* Contact */
+  .contact .info-box,
+  .contact .contact-form {
+    padding: 1.5rem;
+  }
+
+  /* Resume */
+  .resume .experience-section,
+  .resume .education-section {
+    padding-left: 0;
+    padding-right: 0;
+    margin-bottom: 2rem;
+  }
+}
+
+/* ---- Mobile Landscape / Large Phone (576-767px) ---- */
+@media (max-width: 767px) {
+  /* Nav */
+  .theme-toggle {
+    width: 36px;
+    height: 36px;
+    font-size: 17px;
+    right: 60px;
+  }
+
+  /* Hero */
+  .hero {
+    padding: 80px 0 40px;
+  }
+  .hero .hero-title {
+    font-size: 2.2rem;
+  }
+  .hero .lead {
+    font-size: 1rem;
+  }
+  .hero .hero-actions .btn {
+    padding: 10px 22px;
+    font-size: 14px;
+  }
+  .hero .image-container {
+    max-width: 320px;
+  }
+
+  /* Achievements achieve-actions */
+  .achievements .achieve-actions {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .achievements .achieve-btn-certificate {
+    flex: 1 1 100%;
+    justify-content: center;
+    margin-top: 0.3rem;
+  }
+
+  /* About timeline */
+  .about .about-content .journey-timeline .timeline-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+  .about .about-content .journey-timeline .timeline-item .year {
+    min-width: auto;
+    margin-right: 0;
+  }
+
+  /* Skills */
+  .skills .skills-grid .skill-card {
+    padding: 20px 16px;
+  }
+  .skills .skills-grid .skill-card .skill-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .skills .skills-summary {
+    padding: 25px 16px;
+  }
+
+  /* Projects */
+  .projects .projects-filters {
+    gap: 8px;
+    margin-bottom: 30px;
+  }
+  .projects .projects-filters li {
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+  .proj-card-img {
+    height: 175px;
+  }
+
+  /* Certifications */
+  .certifications .cert-card {
+    padding: 1.75rem 1.25rem;
+  }
+  .certifications .cert-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 30px 0;
+  }
+  .footer .social-links a {
+    width: 36px;
+    height: 36px;
+    font-size: 14px;
+  }
+
+  /* Tech tools marquee */
+  .marquee-item {
+    font-size: 1.15rem;
+    gap: 10px;
+  }
+  .marquee-item i {
+    font-size: 2.2rem;
+  }
+  .marquee-content {
+    gap: 50px;
+  }
+}
+
+/* ---- Small Mobile (max 575px) ---- */
+@media (max-width: 575px) {
+  /* Header */
+  .header .logo h1 {
+    font-size: 17px;
+    letter-spacing: 0.5px;
+  }
+  .theme-toggle {
+    width: 32px;
+    height: 32px;
+    font-size: 15px;
+    right: 52px;
+  }
+
+  /* Hero */
+  .hero {
+    padding: 70px 0 30px;
+  }
+  .hero .hero-title {
+    font-size: 1.85rem;
+    margin-bottom: 1rem;
+  }
+  .hero .lead {
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+  }
+  .hero .hero-stats {
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+  }
+  .hero .hero-stats .stat-item .purecounter {
+    font-size: 1.6rem;
+  }
+  .hero .hero-actions {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+  .hero .hero-actions .btn {
+    width: 100%;
+    max-width: 220px;
+    text-align: center;
+    justify-content: center;
+  }
+  .hero .image-container {
+    max-width: 280px;
+  }
+
+  /* Section */
+  section,
+  .section {
+    padding: 50px 0;
+  }
+  .section-title {
+    padding-bottom: 40px;
+  }
+  .section-title h2 {
+    font-size: 26px;
+  }
+  .section-title p {
+    font-size: 14px;
+  }
+
+  /* About */
+  .about .about-content .intro h2 {
+    font-size: 1.7rem;
+    text-align: center;
+  }
+  .about .about-content .intro p {
+    text-align: center;
+    font-size: 15px;
+  }
+  .about .about-content .cta-section .action-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .about .about-content .cta-section .action-buttons .btn {
+    width: 100%;
+    max-width: 220px;
+    text-align: center;
+    justify-content: center;
+  }
+
+  /* Resume */
+  .resume .section-header h2 {
+    font-size: 1.3rem;
+  }
+  .resume .experience-cards .experience-card {
+    padding: 1.2rem;
+  }
+  .resume .experience-cards .experience-card .card-header {
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  /* Projects */
+  .proj-card-img {
+    height: 165px;
+  }
+  .proj-card-body {
+    padding: 16px 18px 14px;
+  }
+  .proj-title {
+    font-size: 1rem;
+  }
+  .projects .projects-filters {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  /* Certifications */
+  .certifications .cert-card {
+    padding: 1.5rem 1rem;
+  }
+  .certifications .cert-title {
+    font-size: 1rem;
+  }
+  .certifications .cert-btn {
+    padding: 0.5rem 1.2rem;
+    font-size: 0.85rem;
+  }
+
+  /* Achievements */
+  .achievements .achieve-card {
+    padding: 1.75rem 1rem;
+  }
+  .achievements .achieve-title {
+    font-size: 1rem;
+  }
+  .achievements .achieve-btn {
+    padding: 0.45rem 0.9rem;
+    font-size: 0.82rem;
+  }
+  .achievements .achieve-btn-certificate {
+    flex: 1 1 100%;
+    justify-content: center;
+    font-size: 0.88rem;
+  }
+  .achievements .achieve-actions {
+    gap: 0.5rem;
+  }
+
+  /* Contact */
+  .contact .info-box,
+  .contact .contact-form {
+    padding: 1.25rem;
+  }
+  .contact .info-box h3,
+  .contact .contact-form h3 {
+    font-size: 1.4rem;
+  }
+  .contact .contact-form .btn {
+    padding: 0.85rem 1.5rem;
+    width: 100%;
+    justify-content: center;
+  }
+  .contact .info-item {
+    gap: 0.85rem;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 25px 0;
+    text-align: center;
+  }
+  .footer .social-links {
+    margin-top: 15px;
+  }
+
+  /* Scroll top button */
+  .scroll-top {
+    width: 38px;
+    height: 38px;
+    right: 12px;
+    bottom: 12px;
+  }
+  .scroll-top i {
+    font-size: 20px;
+  }
+
+  /* Mobile nav */
+  .navmenu ul {
+    width: 260px;
+    right: -260px;
+  }
+  .mobile-nav-active .mobile-nav-toggle {
+    right: 270px;
+  }
+}
+
+/* ---- Extra-small phones (max 400px) ---- */
+@media (max-width: 400px) {
+  .hero .hero-title {
+    font-size: 1.6rem;
+  }
+  .header .logo h1 {
+    font-size: 15px;
+  }
+  .section-title h2 {
+    font-size: 22px;
+  }
+  .proj-card-img {
+    height: 150px;
+  }
+  .certifications .cert-icon,
+  .achievements .achieve-icon {
+    width: 55px;
+    height: 55px;
+  }
+}
+
+/* ---- Touch device optimizations ---- */
+@media (hover: none) and (pointer: coarse) {
+  /* Show hover states always on touch for accessibility */
+  .proj-card:active {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 40px color-mix(in srgb, var(--accent-color), transparent 78%);
+  }
+  .certifications .cert-card:active,
+  .achievements .achieve-card:active {
+    transform: translateY(-4px);
+  }
+  .achievements .achieve-btn-certificate:active {
+    transform: scale(0.97);
+    box-shadow: 0 4px 14px rgba(41, 125, 243, 0.55);
+  }
+  /* Increase tap targets */
+  .certifications .cert-btn,
+  .achievements .achieve-btn {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+  .achievements .achieve-btn-certificate {
+    min-height: 46px;
+  }
+  .navmenu a {
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+  }
+  .footer .social-links a {
+    width: 44px;
+    height: 44px;
   }
 }
