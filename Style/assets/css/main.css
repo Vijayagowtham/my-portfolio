@@ -1822,7 +1822,7 @@ section,
 }
 
 /*--------------------------------------------------------------
-# projects Section
+# Projects Section
 --------------------------------------------------------------*/
 .projects .projects-filters {
   display: flex;
@@ -1830,7 +1830,7 @@ section,
   flex-wrap: wrap;
   gap: 15px;
   padding: 0;
-  margin: 0 0 40px;
+  margin: 0 0 50px;
   list-style: none;
 }
 
@@ -1879,192 +1879,152 @@ section,
   }
 }
 
-.projects .projects-entry {
-  position: relative;
-  border-radius: 16px;
-  overflow: hidden;
+/* ── New Project Card Component ── */
+.proj-card {
   background: var(--surface-color);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
-}
-
-.projects .projects-entry .entry-image {
-  position: relative;
-  margin: 0;
+  border-radius: 18px;
   overflow: hidden;
-  aspect-ratio: 16/9;
+  border: 1px solid color-mix(in srgb, var(--accent-color), transparent 87%);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
-.projects .projects-entry .entry-image img {
+.proj-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 24px 60px color-mix(in srgb, var(--accent-color), transparent 78%);
+  border-color: color-mix(in srgb, var(--accent-color), transparent 60%);
+}
+
+/* Cover image */
+.proj-card-img {
+  width: 100%;
+  height: 215px;
+  overflow: hidden;
+  position: relative;
+}
+
+.proj-card-img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+  display: block;
 }
 
-.projects .projects-entry .entry-image .entry-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.8) 100%);
+.proj-card:hover .proj-card-img img {
+  transform: scale(1.07);
+}
+
+/* Card body */
+.proj-card-body {
+  padding: 22px 24px 20px;
   display: flex;
-  align-items: flex-end;
-  padding: 30px;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  flex-direction: column;
+  flex: 1;
+  gap: 12px;
 }
 
-.projects .projects-entry .entry-image .entry-overlay .overlay-content {
-  width: 100%;
-  transform: translateY(20px);
-  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+/* Title */
+.proj-title {
+  font-size: 1.18rem;
+  font-weight: 700;
+  color: var(--heading-color);
+  margin: 0;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
 }
 
-.projects .projects-entry .entry-image .entry-overlay .entry-meta {
-  color: var(--accent-color);
-  font-size: 14px;
+/* Description */
+.proj-desc {
+  font-size: 0.875rem;
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  line-height: 1.65;
+  margin: 0;
+  flex: 1;
+}
+
+/* Tech tags */
+.proj-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 2px;
+}
+
+.proj-tag {
+  font-size: 0.73rem;
   font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 10px;
+  padding: 4px 13px;
+  border-radius: 20px;
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 58%);
+  color: color-mix(in srgb, var(--default-color), transparent 15%);
+  background: transparent;
+  transition: border-color 0.25s ease, color 0.25s ease;
+  white-space: nowrap;
 }
 
-.projects .projects-entry .entry-image .entry-overlay .entry-title {
-  color: var(--contrast-color);
-  font-size: 24px;
-  font-weight: 600;
-  margin: 0 0 20px;
-}
-
-.projects .projects-entry .entry-image .entry-overlay .entry-links {
-  display: flex;
-  gap: 15px;
-}
-
-.projects .projects-entry .entry-image .entry-overlay .entry-links a {
-  width: 46px;
-  height: 46px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--surface-color);
+.proj-card:hover .proj-tag {
+  border-color: color-mix(in srgb, var(--accent-color), transparent 45%);
   color: var(--accent-color);
-  border-radius: 12px;
-  font-size: 20px;
-  transition: all 0.3s ease;
-  opacity: 0;
-  transform: translateY(20px);
 }
 
-.projects .projects-entry .entry-image .entry-overlay .entry-links a:hover {
-  background: var(--accent-color);
-  color: var(--contrast-color);
+/* Footer: Code link */
+.proj-footer {
+  padding-top: 15px;
+  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
+  margin-top: auto;
+}
+
+.proj-code-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: color-mix(in srgb, var(--default-color), transparent 10%);
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.proj-code-link i {
+  font-size: 1.15rem;
+  transition: transform 0.25s ease;
+}
+
+.proj-code-link:hover {
+  color: var(--accent-color);
+}
+
+.proj-code-link:hover i {
   transform: translateY(-2px);
 }
 
-.projects .projects-entry .entry-image .entry-overlay .entry-links a:nth-child(1) {
-  transition-delay: 0.1s;
-}
-
-.projects .projects-entry .entry-image .entry-overlay .entry-links a:nth-child(2) {
-  transition-delay: 0.2s;
-}
-
-.projects .projects-entry:hover .entry-image img {
-  transform: scale(1.05);
-}
-
-.projects .projects-entry:hover .entry-image .entry-overlay {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.projects .projects-entry:hover .entry-image .entry-overlay .overlay-content {
-  transform: translateY(0);
-}
-
-.projects .projects-entry:hover .entry-image .entry-overlay .entry-links a {
-  opacity: 1;
-  transform: translateY(0);
-}
-
+/* Responsive adjustments */
 @media (max-width: 768px) {
-  .projects .projects-entry .entry-image .entry-overlay {
-    padding: 20px;
+  .proj-card-img {
+    height: 185px;
   }
 
-  .projects .projects-entry .entry-image .entry-overlay .entry-title {
-    font-size: 20px;
-    margin-bottom: 15px;
+  .proj-card-body {
+    padding: 18px 20px 16px;
+    gap: 10px;
   }
 
-  .projects .projects-entry .entry-image .entry-overlay .entry-links a {
-    width: 40px;
-    height: 40px;
-    font-size: 18px;
+  .proj-title {
+    font-size: 1.05rem;
   }
-}
 
-.projects .projects-item .entry-image {
-  aspect-ratio: 4/3;
-}
-
-@media (min-width: 1200px) {
-  .projects .projects-item .entry-title {
-    font-size: 20px;
+  .proj-desc {
+    font-size: 0.84rem;
   }
 }
 
-@media (min-width: 768px) {
-  .projects .row {
-    margin-left: -10px;
-    margin-right: -10px;
-  }
-
-  .projects .row .projects-item {
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-}
-
-@media (min-width: 992px) {
-  .projects .row {
-    margin-left: -12px;
-    margin-right: -12px;
-  }
-
-  .projects .row .projects-item {
-    padding-left: 12px;
-    padding-right: 12px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .projects .row {
-    margin-left: -15px;
-    margin-right: -15px;
-  }
-
-  .projects .row .projects-item {
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .projects .entry-overlay {
-    padding: 25px;
-  }
-}
-
-@media (min-width: 992px) and (max-width: 1199px) {
-  .projects .entry-overlay {
-    padding: 20px;
-  }
-}
-
-@media (max-width: 991px) {
-  .projects .entry-overlay {
-    padding: 20px;
+@media (max-width: 576px) {
+  .proj-card-img {
+    height: 170px;
   }
 }
 
@@ -3997,3 +3957,264 @@ html, body {
   }
 }
 
+
+/*--------------------------------------------------------------
+# Certifications Section
+--------------------------------------------------------------*/
+.certifications .cert-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2.5rem 2rem;
+  background-color: var(--surface-color);
+  border-radius: 16px;
+  border: 1px solid color-mix(in srgb, var(--accent-color), transparent 70%);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent-color), transparent 80%),
+              0 8px 30px color-mix(in srgb, var(--default-color), transparent 90%);
+  transition: all 0.35s ease;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.certifications .cert-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  background: linear-gradient(145deg,
+    color-mix(in srgb, var(--accent-color), transparent 92%) 0%,
+    transparent 60%);
+  pointer-events: none;
+}
+
+.certifications .cert-card:hover {
+  transform: translateY(-6px);
+  border-color: color-mix(in srgb, var(--accent-color), transparent 40%);
+  box-shadow: 0 0 20px color-mix(in srgb, var(--accent-color), transparent 60%),
+              0 12px 40px color-mix(in srgb, var(--default-color), transparent 85%);
+}
+
+.certifications .cert-icon {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--accent-color), transparent 80%);
+  border: 2px solid color-mix(in srgb, var(--accent-color), transparent 50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.certifications .cert-icon i {
+  font-size: 1.8rem;
+  color: var(--accent-color);
+}
+
+.certifications .cert-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--heading-color);
+  margin-bottom: 0.4rem;
+  font-family: var(--heading-font);
+}
+
+.certifications .cert-issuer {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 0.9rem;
+}
+
+.certifications .cert-desc {
+  font-size: 0.9rem;
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.certifications .cert-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.55rem 1.5rem;
+  border-radius: 8px;
+  border: 1.5px solid color-mix(in srgb, var(--default-color), transparent 40%);
+  color: var(--default-color);
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  background: transparent;
+  margin-top: auto;
+}
+
+.certifications .cert-btn:hover {
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+  background: color-mix(in srgb, var(--accent-color), transparent 90%);
+}
+
+.certifications .cert-btn i {
+  font-size: 0.85rem;
+}
+
+@media (max-width: 768px) {
+  .certifications .cert-card {
+    padding: 2rem 1.5rem;
+  }
+}
+
+/*--------------------------------------------------------------
+# Achievements Section
+--------------------------------------------------------------*/
+.achievements .section-title .achieve-plain {
+  color: var(--heading-color);
+}
+
+.achievements .section-title .achieve-accent {
+  color: var(--accent-color);
+}
+
+.achievements .achieve-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2.5rem 2rem;
+  background-color: var(--surface-color);
+  border-radius: 16px;
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
+  box-shadow: 0 8px 30px color-mix(in srgb, var(--default-color), transparent 90%);
+  transition: all 0.35s ease;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.achievements .achieve-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  background: linear-gradient(145deg,
+    color-mix(in srgb, var(--accent-color), transparent 95%) 0%,
+    transparent 60%);
+  pointer-events: none;
+}
+
+.achievements .achieve-card.achieve-card-accent {
+  border-color: color-mix(in srgb, #00d4ff, transparent 55%);
+  box-shadow: 0 0 15px color-mix(in srgb, #00d4ff, transparent 70%),
+              0 8px 30px color-mix(in srgb, var(--default-color), transparent 88%);
+}
+
+.achievements .achieve-card.achieve-card-accent::before {
+  background: linear-gradient(145deg,
+    color-mix(in srgb, #00d4ff, transparent 90%) 0%,
+    transparent 60%);
+}
+
+.achievements .achieve-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 25px color-mix(in srgb, var(--accent-color), transparent 60%),
+              0 14px 40px color-mix(in srgb, var(--default-color), transparent 85%);
+}
+
+.achievements .achieve-card.achieve-card-accent:hover {
+  box-shadow: 0 0 25px color-mix(in srgb, #00d4ff, transparent 50%),
+              0 14px 40px color-mix(in srgb, var(--default-color), transparent 85%);
+}
+
+.achievements .achieve-icon {
+  width: 70px;
+  height: 70px;
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--accent-color), transparent 80%);
+  border: 2px solid color-mix(in srgb, var(--accent-color), transparent 55%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.achievements .achieve-icon i {
+  font-size: 1.7rem;
+  color: var(--accent-color);
+}
+
+.achievements .achieve-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--heading-color);
+  margin-bottom: 1rem;
+  font-family: var(--heading-font);
+}
+
+.achievements .achieve-desc {
+  font-size: 0.92rem;
+  color: color-mix(in srgb, var(--default-color), transparent 25%);
+  line-height: 1.7;
+  margin-bottom: 1.75rem;
+  flex-grow: 1;
+}
+
+.achievements .achieve-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  justify-content: center;
+  margin-top: auto;
+}
+
+.achievements .achieve-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 1.1rem;
+  border-radius: 50px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.achievements .achieve-btn-outline {
+  border: 1.5px solid color-mix(in srgb, var(--default-color), transparent 45%);
+  color: var(--default-color);
+  background: transparent;
+}
+
+.achievements .achieve-btn-outline:hover {
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+  background: color-mix(in srgb, var(--accent-color), transparent 90%);
+}
+
+.achievements .achieve-btn-solid {
+  border: 1.5px solid color-mix(in srgb, var(--default-color), transparent 40%);
+  color: var(--default-color);
+  background: transparent;
+}
+
+.achievements .achieve-btn-solid:hover {
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+  background: color-mix(in srgb, var(--accent-color), transparent 88%);
+}
+
+@media (max-width: 768px) {
+  .achievements .achieve-card {
+    padding: 2rem 1.5rem;
+  }
+  .achievements .achieve-title {
+    font-size: 1.1rem;
+  }
+}
