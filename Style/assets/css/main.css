@@ -25,7 +25,7 @@
   --default-color: #314862; /* Default color used for the majority of the text content across the entire website */
   --heading-color: #000000; /* Color for headings, subheadings and title throughout the website */
   --accent-color:  #297df3; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
-  --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
+  --surface-color: color-mix(in srgb, #ffffff, transparent 15%); /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
 }
 
@@ -61,7 +61,7 @@
   --default-color: #c8cdd7;
   --heading-color: #eef0f4;
   --accent-color: #4a9ff5;
-  --surface-color: #1a1d27;
+  --surface-color: color-mix(in srgb, #1a1d27, transparent 25%);
   --contrast-color: #ffffff;
 
   --nav-color: #c8cdd7;
@@ -74,7 +74,7 @@
 
 [data-theme="dark"] .light-background {
   --background-color: #151821;
-  --surface-color: #1a1d27;
+  --surface-color: color-mix(in srgb, #1a1d27, transparent 25%);
 }
 
 [data-theme="dark"] .dark-background {
@@ -598,7 +598,7 @@ section,
   left: 0;
   right: 0;
   bottom: 0;
-  background: url("../img/bg/abstract-bg-1.webp") no-repeat center center;
+  background: url("../img/bg/abstract-bg-.webp") no-repeat center center;
   background-size: cover;
   opacity: 0.08;
   z-index: 1;
@@ -841,14 +841,15 @@ section,
 .hero .floating-card {
   position: absolute;
   background-color: var(--surface-color);
-  padding: 15px 20px;
-  border-radius: 15px;
-  box-shadow: 0 10px 30px color-mix(in srgb, var(--default-color), transparent 90%);
+  padding: 8px 12px;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px color-mix(in srgb, var(--default-color), transparent 90%);
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 7px;
   white-space: nowrap;
   animation: float 6s ease-in-out infinite;
+  font-size: 0.78rem;
 }
 
 @media (max-width: 768px) {
@@ -859,7 +860,7 @@ section,
 }
 
 .hero .floating-card i {
-  font-size: 1.5rem;
+  font-size: 1.05rem;
   color: var(--accent-color);
 }
 
@@ -1547,7 +1548,7 @@ section,
 }
 
 .resume .experience-section .experience-cards .experience-card .card-body .achievements li::before {
-  content: "✓";
+  content: "â";
   position: absolute;
   left: 0;
   top: 0;
@@ -1888,7 +1889,7 @@ section,
   }
 }
 
-/* ── New Project Card Component ── */
+/* ââ New Project Card Component ââ */
 .proj-card {
   background: var(--surface-color);
   border-radius: 18px;
@@ -4302,7 +4303,7 @@ html, body {
 }
 
 /*--------------------------------------------------------------
-# Full Responsive Design – All Breakpoints
+# Full Responsive Design â All Breakpoints
 --------------------------------------------------------------*/
 
 /* ---- Ultra-Wide (1600px+) ---- */
@@ -4794,3 +4795,787 @@ html, body {
     height: 44px;
   }
 }
+
+/*--------------------------------------------------------------
+# Hero Name Greeting
+--------------------------------------------------------------*/
+.hero-name-greeting {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.hero-name-greeting .greeting-hi {
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  font-family: 'Quicksand', sans-serif;
+  letter-spacing: 0.02em;
+}
+
+.hero-name-greeting .greeting-name {
+  font-size: 2rem;
+  font-weight: 800;
+  font-family: 'Quicksand', sans-serif;
+  letter-spacing: 0.08em;
+  background: linear-gradient(135deg, #a78bfa 0%, #ec4899 40%, #f59e0b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+  display: inline-block;
+  text-transform: uppercase;
+  filter: drop-shadow(0 0 18px rgba(167,139,250,0.45));
+  animation: nameGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes nameGlow {
+  0%   { filter: drop-shadow(0 0 10px rgba(167,139,250,0.4)); }
+  50%  { filter: drop-shadow(0 0 22px rgba(236,72,153,0.5)); }
+  100% { filter: drop-shadow(0 0 16px rgba(245,158,11,0.45)); }
+}
+
+/*--------------------------------------------------------------
+# About Section - New Layout (Box + Right Panel)
+--------------------------------------------------------------*/
+.about .about-content-box {
+  background: var(--surface-color);
+  border: 1.5px solid color-mix(in srgb, var(--accent-color), transparent 65%);
+  border-radius: 16px;
+  padding: 2.2rem 2rem;
+  box-shadow: 0 6px 30px color-mix(in srgb, var(--default-color), transparent 88%);
+  text-align: left;
+}
+
+.about .about-content-box .intro h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--heading-color);
+  margin-bottom: 1rem;
+}
+
+.about .about-content-box .intro p {
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  line-height: 1.7;
+  margin-bottom: 0.7rem;
+}
+
+.about .about-skills-grid {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin: 1.4rem 0;
+}
+
+.about .about-skill-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: color-mix(in srgb, var(--accent-color), transparent 88%);
+  border: 1px solid color-mix(in srgb, var(--accent-color), transparent 60%);
+  border-radius: 8px;
+  padding: 0.5rem 0.9rem;
+}
+
+.about .about-skill-item .about-skill-icon {
+  color: var(--accent-color);
+  font-size: 1.1rem;
+}
+
+.about .about-skill-item h4 {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--heading-color);
+  margin: 0;
+}
+
+/* Right side Professional Expertise Panel */
+.about .about-expertise-panel {
+  background: var(--surface-color);
+  border: 1.5px solid color-mix(in srgb, var(--accent-color), transparent 55%);
+  border-radius: 16px;
+  padding: 2rem 1.8rem;
+  box-shadow: 0 8px 32px color-mix(in srgb, var(--accent-color), transparent 80%);
+  position: sticky;
+  top: 100px;
+}
+
+.about .about-expertise-panel h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--heading-color);
+  margin-bottom: 0.6rem;
+}
+
+.about .about-expertise-panel > p {
+  color: color-mix(in srgb, var(--default-color), transparent 25%);
+  font-size: 0.92rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.about .expertise-stats {
+  margin-bottom: 1.5rem;
+}
+
+.about .estat-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+}
+
+.about .estat-circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent-color), color-mix(in srgb, var(--accent-color), var(--heading-color) 30%));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.about .estat-circle i {
+  color: var(--contrast-color);
+  font-size: 1.1rem;
+}
+
+.about .estat-info .estat-number {
+  display: block;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--heading-color);
+  line-height: 1;
+}
+
+.about .estat-info .estat-label {
+  font-size: 0.82rem;
+  color: color-mix(in srgb, var(--default-color), transparent 35%);
+}
+
+.about .expertise-badges h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--heading-color);
+  margin-bottom: 0.8rem;
+}
+
+.about .expertise-badge-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.about .expertise-badge {
+  background: linear-gradient(45deg, var(--accent-color), color-mix(in srgb, var(--accent-color), var(--heading-color) 20%));
+  color: var(--contrast-color);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+/*--------------------------------------------------------------
+# Skills Section - Category Card Redesign
+--------------------------------------------------------------*/
+.skill-cat-card {
+  background: var(--surface-color);
+  border: 1.5px solid color-mix(in srgb, var(--default-color), transparent 88%);
+  border-radius: 14px;
+  padding: 1.5rem 1.4rem;
+  height: 100%;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-cat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--cat-color, var(--accent-color));
+  border-radius: 14px 14px 0 0;
+  opacity: 0.8;
+}
+
+.skill-cat-card:hover {
+  border-color: var(--cat-color, var(--accent-color));
+  transform: translateY(-4px);
+  box-shadow: 0 10px 28px color-mix(in srgb, var(--default-color), transparent 88%);
+}
+
+.skill-cat-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.2rem;
+}
+
+.skill-cat-header i {
+  font-size: 1.5rem;
+  color: var(--cat-color, var(--accent-color));
+}
+
+.skill-cat-header h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--heading-color);
+  margin: 0;
+}
+
+.skill-cat-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.scat-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: color-mix(in srgb, var(--default-color), transparent 93%);
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
+  border-radius: 20px;
+  padding: 0.3rem 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: color-mix(in srgb, var(--default-color), transparent 10%);
+  transition: all 0.25s ease;
+  cursor: default;
+}
+
+.scat-tag:hover {
+  background: color-mix(in srgb, var(--accent-color), transparent 85%);
+  border-color: color-mix(in srgb, var(--accent-color), transparent 55%);
+  color: var(--heading-color);
+  transform: scale(1.04);
+}
+
+.scat-tag i {
+  font-size: 0.9rem;
+}
+
+/*--------------------------------------------------------------
+# Certifications - Highlighted View Certificate Button
+--------------------------------------------------------------*/
+.certifications .cert-btn-highlight {
+  background: linear-gradient(135deg, var(--accent-color) 0%, color-mix(in srgb, var(--accent-color), #a78bfa 50%) 100%);
+  color: var(--contrast-color) !important;
+  border: none !important;
+  padding: 0.65rem 1.6rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 14px color-mix(in srgb, var(--accent-color), transparent 50%);
+  margin-top: auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.certifications .cert-btn-highlight::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent);
+  transition: left 0.5s ease;
+}
+
+.certifications .cert-btn-highlight:hover::before {
+  left: 100%;
+}
+
+.certifications .cert-btn-highlight:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px color-mix(in srgb, var(--accent-color), transparent 35%);
+  color: var(--contrast-color) !important;
+}
+
+.certifications .cert-btn-highlight i {
+  font-size: 0.9rem;
+}
+
+
+/*--------------------------------------------------------------
+# About Section - CTA / Fun-fact bar + Action Buttons
+--------------------------------------------------------------*/
+.about .about-cta-section {
+  margin-top: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+/* Pill-shaped fun-fact bar */
+.about .about-fun-fact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  background: color-mix(in srgb, var(--default-color), transparent 92%);
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 82%);
+  border-radius: 50px;
+  padding: 0.75rem 1.6rem;
+  width: 100%;
+}
+
+.about .about-fun-fact-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--accent-color), transparent 78%);
+  flex-shrink: 0;
+}
+
+.about .about-fun-fact-icon i {
+  color: var(--accent-color);
+  font-size: 1rem;
+}
+
+.about .about-fun-fact-text {
+  font-size: 0.92rem;
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  font-weight: 400;
+}
+
+/* Action buttons row */
+.about .about-action-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.about .about-btn-rounded {
+  border-radius: 50px !important;
+  padding: 0.7rem 2rem !important;
+  font-weight: 700 !important;
+  font-size: 0.95rem !important;
+  letter-spacing: 0.02em;
+}
+
+.about .about-btn-outline-rounded {
+  border-radius: 50px !important;
+  padding: 0.7rem 2rem !important;
+  font-weight: 700 !important;
+  font-size: 0.95rem !important;
+  letter-spacing: 0.02em;
+  background: transparent;
+  border: 2px solid var(--accent-color);
+  color: var(--accent-color);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.about .about-btn-outline-rounded:hover {
+  background: var(--accent-color);
+  color: var(--contrast-color);
+}
+
+
+/*--------------------------------------------------------------
+# Hero - Greeting line & stylish name font
+--------------------------------------------------------------*/
+.hero .hero-greeting-line {
+  font-size: 2.3rem !important;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  line-height: 1.2;
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+
+.hero .hero-greeting-line .greeting-plain {
+  color: color-mix(in srgb, var(--default-color), transparent 15%);
+  font-weight: 500;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.hero .hero-greeting-line .greeting-name-stylish {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 800;
+  font-size: 2.3rem;
+  background: linear-gradient(135deg, #7dd3fc 0%, #38bdf8 40%, #0ea5e9 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 0.06em;
+  filter: drop-shadow(0 0 14px rgba(56, 189, 248, 0.5));
+}
+
+.hero .hero-typed-line {
+  font-size: 1.15rem !important;
+  font-weight: 500;
+  margin-bottom: 1.2rem;
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  line-height: 1.4;
+}
+
+.hero .hero-typed-line .typed {
+  color: var(--accent-color);
+}
+
+/*--------------------------------------------------------------
+# Hero - Circular image with circular glow highlight
+--------------------------------------------------------------*/
+.hero .image-container.circular-hero {
+  max-width: 380px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.hero .image-container.circular-hero .hero-main-image {
+  width: 320px;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 50%;
+  position: relative;
+  z-index: 2;
+  box-shadow: none;
+}
+
+.hero .image-container.circular-hero .image-overlay {
+  width: 340px;
+  height: 340px;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  right: auto;
+  bottom: auto;
+  background: radial-gradient(circle, color-mix(in srgb, var(--accent-color), transparent 30%) 0%, color-mix(in srgb, var(--accent-color), transparent 70%) 60%, transparent 80%);
+  z-index: 1;
+  box-shadow: 0 0 60px 20px color-mix(in srgb, var(--accent-color), transparent 55%),
+              0 0 100px 40px color-mix(in srgb, var(--accent-color), transparent 75%);
+}
+
+@media (max-width: 991px) {
+  .hero .image-container.circular-hero {
+    max-width: 280px;
+    margin: 0 auto;
+  }
+  .hero .image-container.circular-hero .hero-main-image {
+    width: 260px;
+    height: 260px;
+  }
+  .hero .image-container.circular-hero .image-overlay {
+    width: 280px;
+    height: 280px;
+  }
+  .hero .hero-greeting-line {
+    font-size: 1.7rem !important;
+  }
+  .hero .hero-greeting-line .greeting-name-stylish {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero .hero-greeting-line {
+    font-size: 1.45rem !important;
+  }
+  .hero .hero-greeting-line .greeting-name-stylish {
+    font-size: 1.35rem;
+  }
+  .hero .hero-typed-line {
+    font-size: 1rem !important;
+  }
+  .hero .image-container.circular-hero .hero-main-image {
+    width: 220px;
+    height: 220px;
+  }
+  .hero .image-container.circular-hero .image-overlay {
+    width: 240px;
+    height: 240px;
+  }
+}
+
+
+/*--------------------------------------------------------------
+# Hero font size increase (name + typed text)
+--------------------------------------------------------------*/
+.hero .hero-greeting-line {
+  font-size: 2.6rem !important;
+}
+.hero .hero-greeting-line .greeting-name-stylish {
+  font-size: 2.6rem;
+}
+.hero .hero-typed-line {
+  font-size: 1.35rem !important;
+}
+
+/*--------------------------------------------------------------
+# Comprehensive Responsiveness Overrides
+--------------------------------------------------------------*/
+
+/* -- Ultra-wide (= 1400px) ---------------------------- */
+@media (min-width: 1400px) {
+  .hero .image-container.circular-hero { max-width: 440px; }
+  .hero .image-container.circular-hero .hero-main-image { width: 380px; height: 380px; }
+  .hero .image-container.circular-hero .image-overlay { width: 400px; height: 400px; }
+}
+
+/* -- Desktop / Laptop (992px  1199px) ---------------- */
+@media (max-width: 1199px) {
+  .hero .hero-greeting-line { font-size: 2.2rem !important; }
+  .hero .hero-greeting-line .greeting-name-stylish { font-size: 2.2rem; }
+  .hero .hero-typed-line { font-size: 1.2rem !important; }
+  .about .about-expertise-panel { position: static; }
+}
+
+/* -- Tablet landscape (768px  991px) ----------------- */
+@media (max-width: 991px) {
+  /* Hero */
+  .hero { padding: 100px 0 60px; }
+  .hero .hero-content { text-align: center; }
+  .hero .hero-stats { justify-content: center; }
+  .hero .hero-actions { justify-content: center; }
+  .hero .social-links { justify-content: center; display: flex; }
+  .hero .hero-greeting-line { font-size: 2rem !important; justify-content: center; }
+  .hero .hero-greeting-line .greeting-name-stylish { font-size: 2rem; }
+  .hero .hero-typed-line { font-size: 1.1rem !important; text-align: center; }
+  .hero .lead { text-align: center; font-size: 1rem; }
+  .hero .image-container.circular-hero { margin: 2rem auto 0; }
+
+  /* About */
+  .about .about-content-box { margin-bottom: 1.5rem; }
+  .about .about-expertise-panel { position: static; top: auto; }
+  .about .about-skills-grid { justify-content: center; }
+  .about .about-cta-section { align-items: center; }
+
+  /* Skills */
+  .skill-cat-card { margin-bottom: 0.5rem; }
+
+  /* Certifications & Achievements */
+  .certifications .cert-card,
+  .achievements .achieve-card { margin: 0 auto; max-width: 480px; }
+
+  /* Resume/Internship */
+  .resume .experience-section,
+  .resume .education-section { margin-bottom: 2rem; }
+
+  /* Contact */
+  .contact .info-box { margin-bottom: 1.5rem; }
+}
+
+/* -- Tablet portrait / large phone (576px  767px) ---- */
+@media (max-width: 767px) {
+  /* Hero */
+  .hero { padding: 90px 0 50px; }
+  .hero .hero-greeting-line { font-size: 1.75rem !important; }
+  .hero .hero-greeting-line .greeting-name-stylish { font-size: 1.75rem; }
+  .hero .hero-typed-line { font-size: 1rem !important; }
+  .hero .lead { font-size: 0.95rem; margin-bottom: 1.5rem; }
+  .hero .image-container.circular-hero .hero-main-image { width: 260px; height: 260px; }
+  .hero .image-container.circular-hero .image-overlay { width: 280px; height: 280px; }
+  .hero .floating-card { display: none; }
+
+  /* About box */
+  .about .about-content-box { padding: 1.6rem 1.2rem; }
+  .about .about-expertise-panel { padding: 1.5rem 1.2rem; }
+  .about .about-skills-grid { flex-direction: column; align-items: center; }
+  .about .about-action-buttons { flex-direction: column; align-items: center; }
+  .about .about-btn-rounded,
+  .about .about-btn-outline-rounded { width: 100%; max-width: 220px; justify-content: center; text-align: center; }
+
+  /* Skills */
+  .skill-cat-card { padding: 1.1rem 1rem; }
+  .scat-tag { font-size: 0.75rem; padding: 0.25rem 0.6rem; }
+
+  /* Projects */
+  .projects .projects-filters { flex-wrap: wrap; justify-content: center; gap: 8px; }
+
+  /* Certifications */
+  .certifications .cert-card { padding: 1.6rem 1.2rem; }
+  .certifications .cert-btn-highlight { font-size: 0.82rem; padding: 0.55rem 1.2rem; }
+
+  /* Achievements */
+  .achievements .achieve-actions { flex-wrap: wrap; }
+  .achievements .achieve-btn-certificate { flex: 1 1 100%; justify-content: center; }
+
+  /* Resume section */
+  .resume .experience-cards .experience-card .card-header { flex-direction: column; gap: 0.5rem; }
+  .resume .education-timeline .timeline-track { left: 16px; }
+  .resume .education-timeline .education-item { padding-left: 40px; }
+
+  /* Contact */
+  .contact .contact-form .btn { width: 100%; justify-content: center; }
+}
+
+/* -- Mobile (< 576px) --------------------------------- */
+@media (max-width: 575px) {
+  /* Section spacing */
+  section, .section { padding: 50px 0; }
+  .section-title { padding-bottom: 35px; }
+  .section-title h2 { font-size: 1.6rem; }
+
+  /* Hero */
+  .hero { padding: 80px 0 40px; }
+  .hero .hero-greeting-line { font-size: 1.5rem !important; gap: 0.2rem; }
+  .hero .hero-greeting-line .greeting-name-stylish { font-size: 1.5rem; letter-spacing: 0.03em; }
+  .hero .hero-typed-line { font-size: 0.92rem !important; }
+  .hero .lead { font-size: 0.9rem; }
+  .hero .hero-stats { flex-direction: row; justify-content: center; gap: 1.5rem; }
+  .hero .hero-actions { flex-direction: column; align-items: center; gap: 0.7rem; }
+  .hero .hero-actions .btn { width: 100%; max-width: 220px; text-align: center; justify-content: center; }
+  .hero .image-container.circular-hero { max-width: 240px; }
+  .hero .image-container.circular-hero .hero-main-image { width: 210px; height: 210px; }
+  .hero .image-container.circular-hero .image-overlay { width: 228px; height: 228px; }
+
+  /* About */
+  .about .about-content-box { padding: 1.2rem 1rem; }
+  .about .about-content-box .intro h2 { font-size: 1.2rem; }
+  .about .about-fun-fact { padding: 0.6rem 1rem; }
+  .about .about-fun-fact-text { font-size: 0.82rem; }
+  .about .expertise-badge { font-size: 0.72rem; padding: 5px 10px; }
+
+  /* Skills */
+  .skill-cat-header h3 { font-size: 0.95rem; }
+  .scat-tag { font-size: 0.72rem; }
+
+  /* Certifications */
+  .certifications .cert-title { font-size: 1rem; }
+  .certifications .cert-icon { width: 55px; height: 55px; font-size: 1.4rem; }
+
+  /* Achievements */
+  .achievements .achieve-title { font-size: 1rem; }
+  .achievements .achieve-btn { font-size: 0.8rem; padding: 0.4rem 0.8rem; }
+
+  /* Contact */
+  .contact .info-box h3 { font-size: 1.3rem; }
+  .contact .contact-form h3 { font-size: 1.3rem; }
+
+  /* Nav on mobile */
+  .navmenu ul { width: 260px; right: -260px; }
+
+  /* Footer */
+  .footer { text-align: center; padding: 25px 0; }
+  .footer .social-links { margin-top: 12px; }
+}
+
+/* -- Extra-small phones (< 400px) --------------------- */
+@media (max-width: 400px) {
+  .hero .hero-greeting-line { font-size: 1.3rem !important; }
+  .hero .hero-greeting-line .greeting-name-stylish { font-size: 1.3rem; }
+  .hero .image-container.circular-hero .hero-main-image { width: 185px; height: 185px; }
+  .hero .image-container.circular-hero .image-overlay { width: 200px; height: 200px; }
+  .section-title h2 { font-size: 1.4rem; }
+}
+
+
+/*--------------------------------------------------------------
+# Task 1  Hero Roles Display (all roles shown simultaneously)
+--------------------------------------------------------------*/
+.hero .hero-roles-display {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.6rem;
+  margin: 0.5rem 0 0.8rem;
+  justify-content: flex-start;
+}
+
+.hero .hero-roles-display .role-chip {
+  font-size: 1.15rem;
+  font-weight: 700;
+  font-family: 'Quicksand', sans-serif;
+  color: var(--heading-color);
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  background: linear-gradient(135deg,
+    color-mix(in srgb, #38bdf8, transparent 80%) 0%,
+    color-mix(in srgb, #0ea5e9, transparent 80%) 100%);
+  border: 1px solid color-mix(in srgb, #38bdf8, transparent 60%);
+  border-radius: 6px;
+  padding: 0.2rem 0.65rem;
+  transition: all 0.3s ease;
+}
+
+.hero .hero-roles-display .role-chip:hover {
+  background: linear-gradient(135deg, #38bdf8 0%, #0ea5e9 100%);
+  color: #fff;
+  border-color: transparent;
+  transform: translateY(-2px);
+}
+
+.hero .hero-roles-display .role-dot {
+  font-size: 0.45rem;
+  color: color-mix(in srgb, #38bdf8, transparent 30%);
+  line-height: 1;
+  align-self: center;
+}
+
+/* Center on tablet/mobile */
+@media (max-width: 991px) {
+  .hero .hero-roles-display { justify-content: center; }
+}
+
+@media (max-width: 575px) {
+  .hero .hero-roles-display { gap: 0.35rem 0.4rem; }
+  .hero .hero-roles-display .role-chip { font-size: 0.82rem; padding: 0.18rem 0.5rem; }
+  .hero .hero-roles-display .role-dot { display: none; }
+}
+
+/*--------------------------------------------------------------
+# Task 2  Global Particle Background Canvas
+--------------------------------------------------------------*/
+#global-particles-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Ensure all main content sits above the global particles */
+.header        { z-index: 9999 !important; position: relative; }
+.main          { position: relative; z-index: 1; }
+.page-preloader{ z-index: 99999 !important; }
+.scroll-progress { z-index: 9998 !important; }
+.scroll-top    { z-index: 9997 !important; }
+
+
+/*--------------------------------------------------------------
+# Glassmorphism Effect for Cards (to show particles behind)
+--------------------------------------------------------------*/
+.about-content-box,
+.about-expertise-panel,
+.skill-cat-card,
+.cert-card,
+.achieve-card,
+.resume .experience-card,
+.resume .education-content,
+.service-item,
+.proj-card,
+.contact-form,
+.info-box,
+.testimonial-item,
+.faq-item {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+

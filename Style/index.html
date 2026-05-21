@@ -15,7 +15,7 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Quicksand:wght@300;400;500;600;700&family=Cinzel+Decorative:wght@400;700;900&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -40,6 +40,9 @@
 </head>
 
 <body class="index-page">
+
+  <!-- Global Particle Background -->
+  <canvas id="global-particles-bg" aria-hidden="true"></canvas>
 
   <!-- Page Preloader -->
   <div class="page-preloader" id="page-preloader">
@@ -72,7 +75,7 @@
           <li><a href="#tech-tools">Technologies & Tools</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#skills">Skills</a></li>
-          <li><a href="#resume">Resume</a></li>
+          <li><a href="#resume">Internship</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#certifications">Certifications</a></li>
           <li><a href="#achievements">Achievements</a></li>
@@ -106,9 +109,11 @@
       <div class="container">
         <div class="row g-0 align-items-center">
 
-          <div class="col-lg-6 hero-content" data-aos="fade-right" data-aos-delay="100">
+          <div class="col-lg-6 order-1 order-lg-1 hero-content" data-aos="fade-right" data-aos-delay="100">
             <div class="content-wrapper">
-              <h1 class="hero-title"><span class="shimmer-text">Creative</span> <span class="typed" data-typed-items="Designer, Developer, Freelancer, Artist"></span></h1>
+              <h4 class="hero-title hero-greeting-line"><span class="greeting-plain">Hi, I'm </span><span class="greeting-name-stylish">VIJAYAGOWTHAM</span></h4>
+
+              <h1 class="hero-title hero-typed-line"><span class="typed" data-typed-items="AI Engineer, UI Designer, Frontend Developer,FullStack Developer"></span></h1>
               <p class="lead">I create digital experiences that inspire and engage. With a passion for clean design and innovative solutions, I transform ideas into beautiful, functional realities.</p>
 
               <div class="hero-stats" data-aos="fade-up" data-aos-delay="200">
@@ -135,8 +140,8 @@
             </div>
           </div>
 
-          <div class="col-lg-6 hero-image" data-aos="fade-left" data-aos-delay="200">
-            <div class="image-container">
+          <div class="col-lg-6 order-2 order-lg-2 hero-image" data-aos="fade-left" data-aos-delay="200">
+            <div class="image-container circular-hero">
               <div class="floating-elements">
                 <div class="floating-card card-1" data-aos="zoom-in" data-aos-delay="300">
                   <i class="bi bi-palette"></i>
@@ -151,7 +156,7 @@
                   <span>Creative Ideas</span>
                 </div>
               </div>
-              <img src="assets/img/profile/my pc ai.jpg" alt="projects Hero" class="img-fluid hero-main-image">
+              <img src="assets/img/profile/my  circle coat pic.png" alt="projects Hero" class="img-fluid hero-main-image">
               <div class="image-overlay"></div>
             </div>
           </div>
@@ -230,309 +235,210 @@
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
-        <div class="row align-items-center justify-content-center">
+        <div class="row align-items-start g-4">
 
-          <div class="col-lg-7" data-aos="fade-left" data-aos-delay="300">
-            <div class="about-content">
+          <!-- Left: About Content Box -->
+          <div class="col-lg-7" data-aos="fade-right" data-aos-delay="200">
+            <div class="about-content-box">
               <div class="intro">
-                <h2>Hi, I'm VIJAYAGOWTHAM - a Creative Developer</h2>
-                <p>I'm Vijayagowtham, a Full Stack Developer and a . Artificial Intelligence and Data Science student. I enjoy building clean, responsive web apps and turning ideas into digital solutions.</p>
+                <h2>Professional Summary</h2>
+                <p>Aspiring Full Stack Developer and an Artificial Intelligence and Data Science student. I enjoy building clean, responsive web apps and turning ideas into digital solutions.</p>
                 <p>I work with HTML, CSS, JavaScript, React, and Firebase, and I'm exploring backend tech too. I love hackathons, UI design, and always learning something new.</p>
                 <p>Let's build something impactful together!</p>
               </div>
 
-              <div class="skills-grid">
-                <div class="skill-item" data-aos="zoom-in" data-aos-delay="400">
-                  <div class="skill-icon">
-                    <i class="bi bi-palette"></i>
-                  </div>
-                  <h4>UI/UX Design</h4>
-                  <p>Mauris blandit aliquet elit, eget tincidunt nibh pulvinar</p>
+              <div class="about-skills-grid">
+                <div class="about-skill-item" data-aos="zoom-in" data-aos-delay="300">
+                  <div class="about-skill-icon"><i class="bi bi-palette"></i></div>
+                  <h4>UI Design</h4>
                 </div>
-                <div class="skill-item" data-aos="zoom-in" data-aos-delay="450">
-                  <div class="skill-icon">
-                    <i class="bi bi-code-slash"></i>
-                  </div>
+                <div class="about-skill-item" data-aos="zoom-in" data-aos-delay="350">
+                  <div class="about-skill-icon"><i class="bi bi-code-slash"></i></div>
                   <h4>Frontend Dev</h4>
-                  <p>Sed porttitor lectus nibh. Cras ultricies ligula sed magna</p>
                 </div>
-                <div class="skill-item" data-aos="zoom-in" data-aos-delay="500">
-                  <div class="skill-icon">
-                    <i class="bi bi-camera"></i>
+                <div class="about-skill-item" data-aos="zoom-in" data-aos-delay="400">
+                  <div class="about-skill-icon"><i class="bi bi-cpu"></i></div>
+                  <h4>AI & Automation</h4>
+                </div>
+              </div>
+
+              <div class="about-cta-section" data-aos="fade-up" data-aos-delay="450">
+                <div class="about-fun-fact">
+                  <span class="about-fun-fact-icon"><i class="fa-solid fa-mug-hot"></i></span>
+                  <span class="about-fun-fact-text">Coffee-fueled designer based in INDIA</span>
+                </div>
+                <div class="about-action-buttons">
+                  <a href="#projects" class="btn btn-primary about-btn-rounded">View My Work</a>
+                  <a href="V._VIJAYA_GOWTHAM_FlowCV_april.pdf" class="btn about-btn-outline-rounded">Download Resume</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Professional Expertise Panel -->
+          <div class="col-lg-5" data-aos="fade-left" data-aos-delay="300">
+            <div class="about-expertise-panel">
+              <h3>Professional Expertise</h3>
+              <p>I specialize in building full-stack applications with a focus on AI-driven solutions and academic excellence in Data Science.</p>
+
+              <div class="expertise-stats">
+                <div class="estat-item" data-aos="zoom-in" data-aos-delay="350">
+                  <div class="estat-circle"><i class="bi bi-trophy"></i></div>
+                  <div class="estat-info">
+                    <span class="estat-number">2025</span>
+                    <span class="estat-label">SIH Finalist</span>
                   </div>
-                  <h4>Photography</h4>
-                  <p>Vestibulum ac diam sit amet quam vehicula elementum</p>
+                </div>
+                <div class="estat-item" data-aos="zoom-in" data-aos-delay="400">
+                  <div class="estat-circle"><i class="bi bi-diagram-3"></i></div>
+                  <div class="estat-info">
+                    <span class="estat-number">15+</span>
+                    <span class="estat-label">Projects Completed</span>
+                  </div>
+                </div>
+                <div class="estat-item" data-aos="zoom-in" data-aos-delay="450">
+                  <div class="estat-circle"><i class="bi bi-people"></i></div>
+                  <div class="estat-info">
+                    <span class="estat-number">✓</span>
+                    <span class="estat-label">Strong Team Collaboration</span>
+                  </div>
                 </div>
               </div>
 
-              <div class="journey-timeline" data-aos="fade-up" data-aos-delay="300">
-                <div class="timeline-item">
-                  <div class="year">2023-2027</div>
-                  <div class="description">B.Tech in Artificial Intelligence & Data Science</div>
-                </div>
-                <div class="timeline-item">
-                  <div class="year">June-July 2025</div>
-                  <div class="description">VINSUP INFOTECH	India(Onsite)
-Web Development Intern	2025
-</div>
-                </div>
-                <div class="timeline-item">
-                  <div class="year"> Sep-2025</div>
-                  <div class="description">SKILLCRAFT TECHNOLOGY	India (Remote)
-Software Development Intern	2025
-</div>
+              <div class="expertise-badges" data-aos="fade-up" data-aos-delay="500">
+                <h4>Certifications</h4>
+                <div class="expertise-badge-list">
+                  <div class="expertise-badge">FullStack Development</div>
+                  <div class="expertise-badge">Cloud Computing</div>
+                  <div class="expertise-badge">Generative AI</div>
+                  <div class="expertise-badge">Data Science</div>
                 </div>
               </div>
+            </div>
+          </div>
 
-              <div class="cta-section" data-aos="fade-up" data-aos-delay="400">
-                <div class="fun-fact">
-                  <span class="fun-fact-icon"><i class="fa-solid fa-mug-hot"></i></span>
-                  <span class="text">Coffee-fueled designer based in INDIA</span>
-                </div>
-                <div class="action-buttons">
-                  <a href="#projects" class="btn btn-primary">View My Work</a>
-                  <a href="V._VIJAYA_GOWTHAM_FlowCV_april.pdf" class="btn btn-outline">Download Resume</a>
-                </div>
-              </div> <!-- End about-content -->
-            </div> <!-- End col-lg-7 -->
-          </div> <!-- End row -->
-        </div> <!-- End container -->
+        </div>
+      </div>
     </section><!-- /About Section -->
 
     <!-- Skills Section -->
     <section id="skills" class="skills section section-reveal">
 
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Skills</h2>
+        <p>A breakdown of my technical capabilities across development, design, and tools.</p>
+      </div><!-- End Section Title -->
+
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
-        <div class="row">
-          <div class="col-lg-8">
-            <div class="skills-grid">
-              <div class="row g-4">
-                <div class="col-md-6" data-aos="flip-left" data-aos-delay="200">
-                  <div class="skill-card">
-                    <div class="skill-header">
-                      <i class="bi bi-code-slash"></i>
-                      <h3>Frontend Development</h3>
-                    </div>
-                    <div class="skills-animation">
-                      <div class="skill-item">
-                        <div class="skill-info">
-                          <span class="skill-name">HTML/CSS</span>
-                          <span class="skill-percentage">95%</span>
-                        </div>
-                        <div class="skill-bar progress">
-                          <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                      </div>
+        <div class="row g-4 justify-content-center">
 
-                      <div class="skill-item">
-                        <div class="skill-info">
-                          <span class="skill-name">JavaScript</span>
-                          <span class="skill-percentage">88%</span>
-                        </div>
-                        <div class="skill-bar progress">
-                          <div class="progress-bar" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                      </div>
-
-                      <div class="skill-item">
-                        <div class="skill-info">
-                          <span class="skill-name">React.js</span>
-                          <span class="skill-percentage">82%</span>
-                        </div>
-                        <div class="skill-bar progress">
-                          <div class="progress-bar" role="progressbar" aria-valuenow="82" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div><!-- End Frontend Card -->
-                </div>
-
-                <div class="col-md-6" data-aos="flip-left" data-aos-delay="300">
-                  <div class="skill-card">
-                    <div class="skill-header">
-                      <i class="bi bi-server"></i>
-                      <h3>Backend Development</h3>
-                    </div>
-                    <div class="skills-animation">
-                      <div class="skill-item">
-                        <div class="skill-info">
-                          <span class="skill-name">SupaBase</span>
-                          <span class="skill-percentage">78%</span>
-                        </div>
-                        <div class="skill-bar progress">
-                          <div class="progress-bar" role="progressbar" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                      </div>
-
-                      <div class="skill-item">
-                        <div class="skill-info">
-                          <span class="skill-name">MongoDB</span>
-                          <span class="skill-percentage">75%</span>
-                        </div>
-                        <div class="skill-bar progress">
-                          <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                      </div>
-
-                      <div class="skill-item">
-                        <div class="skill-info">
-                          <span class="skill-name">Pg Admin</span>
-                          <span class="skill-percentage">72%</span>
-                        </div>
-                        <div class="skill-bar progress">
-                          <div class="progress-bar" role="progressbar" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div><!-- End Backend Card -->
-                </div>
-
-                <div class="col-md-6" data-aos="flip-left" data-aos-delay="400">
-                  <div class="skill-card">
-                    <div class="skill-header">
-                      <i class="bi bi-palette"></i>
-                      <h3>Design &amp; Tools</h3>
-                    </div>
-                    <div class="skills-animation">
-                      <div class="skill-item">
-                        <div class="skill-info">
-                          <span class="skill-name">Canva</span>
-                          <span class="skill-percentage">85%</span>
-                        </div>
-                        <div class="skill-bar progress">
-                          <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                      </div>
-
-                      <div class="skill-item">
-                        <div class="skill-info">
-                          <span class="skill-name">Figma</span>
-                          <span class="skill-percentage">70%</span>
-                        </div>
-                        <div class="skill-bar progress">
-                          <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                      </div>
-
-                      <div class="skill-item">
-                        <div class="skill-info">
-                          <span class="skill-name">Photoshop</span>
-                          <span class="skill-percentage">68%</span>
-                        </div>
-                        <div class="skill-bar progress">
-                          <div class="progress-bar" role="progressbar" aria-valuenow="68" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div><!-- End Design Card -->
-                </div>
-
-                <div class="col-md-6" data-aos="flip-left" data-aos-delay="500">
-                  <div class="skill-card">
-                    <div class="skill-header">
-                      <i class="bi bi-cloud"></i>
-                      <h3>Cloud &amp; DevOps</h3>
-                    </div>
-                    <div class="skills-animation">
-                      <div class="skill-item">
-                        <div class="skill-info">
-                          <span class="skill-name">GitHub</span>
-                          <span class="skill-percentage">90%</span>
-                        </div>
-                        <div class="skill-bar progress">
-                          <div class="progress-bar" role="progressbar" aria-valuenow="76" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                      </div>
-
-                      <div class="skill-item">
-                        <div class="skill-info">
-                          <span class="skill-name">Docker</span>
-                          <span class="skill-percentage">73%</span>
-                        </div>
-                        <div class="skill-bar progress">
-                          <div class="progress-bar" role="progressbar" aria-valuenow="73" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                      </div>
-
-                      <div class="skill-item">
-                        <div class="skill-info">
-                          <span class="skill-name">Git</span>
-                          <span class="skill-percentage">90%</span>
-                        </div>
-                        <div class="skill-bar progress">
-                          <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div><!-- End DevOps Card -->
-                </div>
+          <!-- Frontend -->
+          <div class="col-lg-4 col-md-6" data-aos="flip-left" data-aos-delay="100">
+            <div class="skill-cat-card">
+              <div class="skill-cat-header" style="--cat-color: #a78bfa;">
+                <i class="bi bi-code-slash"></i>
+                <h3>Frontend</h3>
               </div>
-            </div><!-- End Skills Grid -->
+              <div class="skill-cat-tags">
+                <span class="scat-tag"><i class="devicon-html5-plain colored"></i> HTML5</span>
+                <span class="scat-tag"><i class="devicon-css3-plain colored"></i> CSS3</span>
+                <span class="scat-tag"><i class="devicon-javascript-plain colored"></i> JavaScript</span>
+                <span class="scat-tag"><i class="devicon-react-original colored"></i> React.js</span>
+                <span class="scat-tag"><i class="devicon-tailwindcss-original colored"></i> Tailwind CSS</span>
+                <span class="scat-tag"><i class="bi bi-grid"></i> Responsive Web Design</span>
+                <span class="scat-tag"><i class="bi bi-puzzle"></i> Component-Based UI</span>
+              </div>
+            </div>
           </div>
 
-          <div class="col-lg-4">
-            <div class="skills-summary" data-aos="fade-left" data-aos-delay="200">
-              <h3>Professional Expertise</h3>
-              <p>I specialize in building full-stack applications with a focus on AI-driven solutions and academic excellence in Data Science.</p>
-
-              <div class="summary-stats">
-                <div class="stat-item" data-aos="zoom-in" data-aos-delay="300">
-                  <div class="stat-circle">
-                    <i class="bi bi-trophy"></i>
-                  </div>
-                  <div class="stat-info">
-                    <span class="stat-number">2025</span>
-                    <span class="stat-label">SIH Finalist</span>
-                  </div>
-                </div>
-
-                <div class="stat-item" data-aos="zoom-in" data-aos-delay="400">
-                  <div class="stat-circle">
-                    <i class="bi bi-diagram-3"></i>
-                  </div>
-                  <div class="stat-info">
-                    <span class="stat-number">15+</span>
-                    <span class="stat-label">Projects Completed</span>
-                  </div>
-                </div>
-
-                <div class="stat-item" data-aos="zoom-in" data-aos-delay="500">
-                  <div class="stat-circle">
-                    <i class="bi bi-people"></i>
-                  </div>
-                  <div class="stat-info">
-                    <span class="stat-number"></span>
-                    <span class="stat-label">Strong Team Collaboration</span>
-                  </div>
-                </div>
+          <!-- Backend -->
+          <div class="col-lg-4 col-md-6" data-aos="flip-left" data-aos-delay="200">
+            <div class="skill-cat-card">
+              <div class="skill-cat-header" style="--cat-color: #ec4899;">
+                <i class="bi bi-server"></i>
+                <h3>Backend</h3>
               </div>
-
-              <div class="skills-badges" data-aos="fade-up" data-aos-delay="600">
-                <h4>Certifications</h4>
-                <div class="badge-list">
-                  <div class="skill-badge">FullStack Developement</div>
-                  <div class="skill-badge">Laravel Expert</div>
-                  <div class="skill-badge">AWS Certified</div>
-                  <div class="skill-badge">UI Design</div>
-                </div>
+              <div class="skill-cat-tags">
+                <span class="scat-tag"><i class="devicon-nodejs-plain colored"></i> Node.js</span>
+                <span class="scat-tag"><i class="devicon-express-original"></i> Express.js</span>
+                <span class="scat-tag"><i class="bi bi-diagram-2"></i> REST APIs</span>
+                <span class="scat-tag"><i class="bi bi-database"></i> CRUD Operations</span>
+                <span class="scat-tag"><i class="bi bi-plug"></i> API Integration</span>
               </div>
-            </div><!-- End Skills Summary -->
+            </div>
           </div>
-        </div>
 
-      </div>
+          <!-- Database -->
+          <div class="col-lg-4 col-md-6" data-aos="flip-left" data-aos-delay="300">
+            <div class="skill-cat-card">
+              <div class="skill-cat-header" style="--cat-color: #34d399;">
+                <i class="bi bi-cylinder"></i>
+                <h3>Database</h3>
+              </div>
+              <div class="skill-cat-tags">
+                <span class="scat-tag"><i class="devicon-mongodb-plain colored"></i> MongoDB</span>
+                <span class="scat-tag"><i class="devicon-supabase-plain colored"></i> Supabase</span>
+                <span class="scat-tag"><i class="devicon-firebase-plain colored"></i> Firebase</span>
+                <span class="scat-tag"><i class="devicon-postgresql-plain colored"></i> PostgreSQL</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- AI & Automation -->
+          <div class="col-lg-4 col-md-6" data-aos="flip-left" data-aos-delay="400">
+            <div class="skill-cat-card">
+              <div class="skill-cat-header" style="--cat-color: #f59e0b;">
+                <i class="bi bi-robot"></i>
+                <h3>AI &amp; Automation</h3>
+              </div>
+              <div class="skill-cat-tags">
+                <span class="scat-tag"><i class="bi bi-diagram-3-fill" style="color:#ff6d5a"></i> n8n</span>
+                <span class="scat-tag"><i class="bi bi-water"></i> Flowise</span>
+                <span class="scat-tag"><i class="bi bi-stars"></i> OpenAI API Integration</span>
+                <span class="scat-tag"><i class="bi bi-gem"></i> Gemini API Integration</span>
+                <span class="scat-tag"><i class="bi bi-stars"></i> Claude API Integration</span>
+                <span class="scat-tag"><i class="bi bi-chat-dots"></i> Chatbot Development</span>
+                <span class="scat-tag"><i class="bi bi-arrow-repeat"></i> Workflow Automation</span>
+                <span class="scat-tag"><i class="bi bi-terminal"></i> Prompt Engineering</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tools -->
+          <div class="col-lg-4 col-md-6" data-aos="flip-left" data-aos-delay="500">
+            <div class="skill-cat-card">
+              <div class="skill-cat-header" style="--cat-color: #60a5fa;">
+                <i class="bi bi-tools"></i>
+                <h3>Tools</h3>
+              </div>
+              <div class="skill-cat-tags">
+                <span class="scat-tag"><i class="devicon-git-plain colored"></i> Git</span>
+                <span class="scat-tag"><i class="devicon-github-original"></i> GitHub</span>
+                <span class="scat-tag"><i class="bi bi-send"></i> Postman</span>
+                <span class="scat-tag"><i class="devicon-vscode-plain colored"></i> VS Code</span>
+                <span class="scat-tag"><i class="bi bi-triangle"></i> Vercel</span>
+                <span class="scat-tag"><i class="bi bi-cloud-upload"></i> Netlify</span>
+                <span class="scat-tag"><i class="bi bi-boxes"></i> Llama</span>
+              </div>
+            </div>
+          </div>
+
+
+
+      </div><!-- End container -->
 
     </section><!-- /Skills Section -->
 
 
-    <!-- Resume Section -->
+    <!-- Internship Section -->
     <section id="resume" class="resume section section-reveal">
 
       <!-- Section Title -->
       <div class="container section-title">
-        <h2>Resume</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+        <h2>Internship</h2>
+        <p>My professional internship experiences and academic background that shaped my skills.</p>
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -868,8 +774,8 @@ Software Development Intern	2025
               <h3 class="cert-title">Cloud Computing</h3>
               <span class="cert-issuer">NPTEL</span>
               <p class="cert-desc">Successfully completed the Cloud Computing course offered by NPTEL</p>
-              <a href="cloud computing.png" target="_blank" class="cert-btn">
-                View Certificate <i class="bi bi-box-arrow-up-right"></i>
+              <a href="cloud computing.png" target="_blank" class="cert-btn cert-btn-highlight">
+                <i class="bi bi-patch-check-fill"></i> View Certificate <i class="bi bi-box-arrow-up-right"></i>
               </a>
             </div>
           </div><!-- End Cert Card 2 -->
@@ -883,8 +789,8 @@ Software Development Intern	2025
               <h3 class="cert-title">Full Stack Development</h3>
               <span class="cert-issuer">VINSUP INFOTECH (P) LTD</span>
               <p class="cert-desc">Completed my Full Stack Development internship at VINSUP INFOTECH (P) LTD (On-site)</p>
-              <a href="full stack certificate A.jpg" target="_blank" class="cert-btn">
-                View Certificate <i class="bi bi-box-arrow-up-right"></i>
+              <a href="full stack certificate A.jpg" target="_blank" class="cert-btn cert-btn-highlight">
+                <i class="bi bi-patch-check-fill"></i> View Certificate <i class="bi bi-box-arrow-up-right"></i>
               </a>
             </div>
           </div><!-- End Cert Card 3 -->
@@ -898,8 +804,8 @@ Software Development Intern	2025
               <h3 class="cert-title">Data Science</h3>
               <span class="cert-issuer">Infosys Springboard</span>
               <p class="cert-desc">Successfully completed the Introduction to Data Science course at Infosys Springboard</p>
-              <a href="introduction to data science.pdf" target="_blank" class="cert-btn">
-                View Certificate <i class="bi bi-box-arrow-up-right"></i>
+              <a href="introduction to data science.pdf" target="_blank" class="cert-btn cert-btn-highlight">
+                <i class="bi bi-patch-check-fill"></i> View Certificate <i class="bi bi-box-arrow-up-right"></i>
               </a>
             </div>
           </div><!-- End Cert Card 4 -->
@@ -913,8 +819,8 @@ Software Development Intern	2025
               <h3 class="cert-title">Generative AI</h3>
               <span class="cert-issuer">Microsoft</span>
               <p class="cert-desc">Successfully completed the Generative AI course offered by Microsoft</p>
-              <a href="Fundamentals of Generative AI.pdf" target="_blank" class="cert-btn">
-                View Certificate <i class="bi bi-box-arrow-up-right"></i>
+              <a href="Fundamentals of Generative AI.pdf" target="_blank" class="cert-btn cert-btn-highlight">
+                <i class="bi bi-patch-check-fill"></i> View Certificate <i class="bi bi-box-arrow-up-right"></i>
               </a>
             </div>
           </div><!-- End Cert Card 5 -->
@@ -928,8 +834,8 @@ Software Development Intern	2025
               <h3 class="cert-title">Communication Skills</h3>
               <span class="cert-issuer">TCS</span>
               <p class="cert-desc">Successfully completed the Communication Skills course at TCS Skillp</p>
-              <a href="Communication Skills in TCS.pdf" target="_blank" class="cert-btn">
-                View Certificate <i class="bi bi-box-arrow-up-right"></i>
+              <a href="Communication Skills in TCS.pdf" target="_blank" class="cert-btn cert-btn-highlight">
+                <i class="bi bi-patch-check-fill"></i> View Certificate <i class="bi bi-box-arrow-up-right"></i>
               </a>
             </div>
           </div><!-- End Cert Card 6 -->
@@ -942,8 +848,8 @@ Software Development Intern	2025
               <h3 class="cert-title">HTML CSS and JavaScript</h3>
               <span class="cert-issuer">MIND LUSTER</span>
               <p class="cert-desc">Successfully completed course in HTML, CSS and JavaScript</p>
-              <a href="https://www.mindluster.com/" target="_blank" class="cert-btn">
-                View Certificate <i class="bi bi-box-arrow-up-right"></i>
+              <a href="Mindluster_Certificate.pdf" target="_blank" class="cert-btn cert-btn-highlight">
+                <i class="bi bi-patch-check-fill"></i> View Certificate <i class="bi bi-box-arrow-up-right"></i>
               </a>
             </div>
           </div><!-- End Cert Card 1 -->
@@ -1180,6 +1086,182 @@ Software Development Intern	2025
           console.error("EmailJS Error:", error);
         });
     });
+  </script>
+
+  <!-- Global Background Particle System -->
+  <script>
+  (function () {
+    const canvas = document.getElementById('global-particles-bg');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+
+    let W, H, particles = [], sparks = [], raf;
+    const COUNT = window.innerWidth < 600 ? 50 : 110;
+    const MAX_DIST = window.innerWidth < 600 ? 110 : 160;
+    const MOUSE_DIST = 200;
+
+    const mouse = { x: -1000, y: -1000 };
+
+    function resize() {
+      W = canvas.width = window.innerWidth;
+      H = canvas.height = window.innerHeight;
+    }
+    
+    function rand(a, b) { return Math.random() * (b - a) + a; }
+
+    class Particle {
+      constructor() {
+        this.x = rand(0, W);
+        this.y = rand(0, H);
+        this.r = rand(1, 2.8);
+        this.vx = rand(-0.25, 0.25);
+        this.vy = rand(-0.25, 0.25);
+        this.baseAlpha = rand(0.3, 0.8);
+      }
+      update() {
+        // Mouse interaction (repulsion)
+        const dx = mouse.x - this.x;
+        const dy = mouse.y - this.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        
+        if (dist < MOUSE_DIST) {
+          const force = (MOUSE_DIST - dist) / MOUSE_DIST;
+          this.x -= (dx / dist) * force * 0.6;
+          this.y -= (dy / dist) * force * 0.6;
+        }
+
+        this.x += this.vx;
+        this.y += this.vy;
+
+        // Wrap edges smoothly
+        if (this.x < -10) this.x = W + 10;
+        if (this.x > W + 10) this.x = -10;
+        if (this.y < -10) this.y = H + 10;
+        if (this.y > H + 10) this.y = -10;
+      }
+      draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(56, 189, 248, ${this.baseAlpha})`;
+        ctx.shadowBlur = 12;
+        ctx.shadowColor = 'rgba(56, 189, 248, 0.9)';
+        ctx.fill();
+        ctx.shadowBlur = 0; // reset for performance
+      }
+    }
+
+    class Spark {
+      constructor(p1, p2) {
+        this.p1 = p1;
+        this.p2 = p2;
+        this.progress = 0;
+        this.speed = rand(0.015, 0.035);
+      }
+      update() {
+        this.progress += this.speed;
+        return this.progress >= 1;
+      }
+      draw() {
+        const x = this.p1.x + (this.p2.x - this.p1.x) * this.progress;
+        const y = this.p1.y + (this.p2.y - this.p1.y) * this.progress;
+        
+        ctx.beginPath();
+        ctx.arc(x, y, 2.2, 0, Math.PI * 2);
+        ctx.fillStyle = '#ffffff';
+        ctx.shadowBlur = 15;
+        ctx.shadowColor = '#0ea5e9';
+        ctx.fill();
+        ctx.shadowBlur = 0;
+      }
+    }
+
+    function init() {
+      resize();
+      particles = [];
+      sparks = [];
+      for (let i = 0; i < COUNT; i++) particles.push(new Particle());
+    }
+
+    function draw() {
+      ctx.clearRect(0, 0, W, H);
+
+      // Draw connections
+      ctx.lineWidth = 0.8;
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          
+          if (dist < MAX_DIST) {
+            const alpha = (1 - dist / MAX_DIST) * 0.2;
+            ctx.beginPath();
+            ctx.strokeStyle = `rgba(56, 189, 248, ${alpha})`;
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.stroke();
+
+            // Randomly create data spark traveling along line
+            if (Math.random() < 0.0008) {
+              sparks.push(new Spark(particles[i], particles[j]));
+            }
+          }
+        }
+      }
+
+      // Draw mouse connections (adds interactive depth)
+      for (let i = 0; i < particles.length; i++) {
+        const dx = particles[i].x - mouse.x;
+        const dy = particles[i].y - mouse.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < MOUSE_DIST) {
+          const alpha = (1 - dist / MOUSE_DIST) * 0.35;
+          ctx.beginPath();
+          ctx.strokeStyle = `rgba(167, 139, 250, ${alpha})`; // Soft violet for interactive links
+          ctx.moveTo(particles[i].x, particles[i].y);
+          ctx.lineTo(mouse.x, mouse.y);
+          ctx.stroke();
+        }
+      }
+
+      // Draw nodes
+      particles.forEach(p => { p.update(); p.draw(); });
+      
+      // Update and draw sparks
+      sparks = sparks.filter(s => {
+        const done = s.update();
+        if (!done) s.draw();
+        return !done;
+      });
+
+      raf = requestAnimationFrame(draw);
+    }
+
+    // Performance optimizations
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) {
+        cancelAnimationFrame(raf);
+      } else {
+        raf = requestAnimationFrame(draw);
+      }
+    });
+
+    window.addEventListener('resize', init);
+    
+    window.addEventListener('mousemove', (e) => {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
+    });
+    
+    // Move mouse offscreen when it leaves the window
+    window.addEventListener('mouseleave', () => {
+      mouse.x = -1000;
+      mouse.y = -1000;
+    });
+
+    init();
+    draw();
+  })();
   </script>
 
 </body>
