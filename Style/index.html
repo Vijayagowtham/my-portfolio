@@ -4,39 +4,40 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>VG-Developer-projects</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
+  <title>Vijaya Gowtham | Full Stack Developer & AI Engineer Portfolio</title>
+  <meta name="description" content="Portfolio of Vijaya Gowtham — Full Stack Developer, AI Engineer, and UI Designer. Explore 15+ projects built with React, Node.js, Python, and modern web technologies.">
+  <meta name="keywords" content="Vijaya Gowtham, Full Stack Developer, AI Engineer, React, Node.js, Portfolio, Web Developer, UI Designer">
+  <meta name="author" content="Vijaya Gowtham">
+  <meta property="og:title" content="Vijaya Gowtham | Full Stack Developer & AI Engineer">
+  <meta property="og:description" content="Explore 15+ projects built with React, Node.js, Python, and cutting-edge AI technologies.">
+  <meta property="og:type" content="website">
 
-  <!-- V logo -->
-  <link href="assets/img/V logo.jpg" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <!-- Favicon -->
+  <link href="assets/img/v-logo.webp" rel="icon">
+
+  <!-- Preload critical resources -->
+  <link rel="preload" href="assets/img/profile/profile-hero.webp" as="image" type="image/webp">
+  <link rel="preload" href="assets/css/main.css" as="style">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Quicksand:wght@300;400;500;600;700&family=Cinzel+Decorative:wght@400;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Open+Sans:wght@300;400;500;600;700;800&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Vendor CSS Files -->
+  <!-- Critical CSS -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-  <!-- Font Awesome (professional icons) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous">
+
+  <!-- Deferred CSS (non-critical) -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet" media="print" onload="this.media='all'">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" media="print" onload="this.media='all'">
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: Style
-  * Template URL: https://bootstrapmade.com/style-bootstrap-project-template/
-  * Updated: Jul 02 2025 with Bootstrap v5.3.7
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+  <!-- Chatbot CSS -->
+  <link href="assets/css/chatbot.css" rel="stylesheet" media="print" onload="this.media='all'">
 </head>
 
 <body class="index-page">
@@ -98,8 +99,7 @@
     <!-- Hero Section -->
     <section id="hero" class="hero section hero-entrance">
 
-      <!-- Particle Canvas -->
-      <canvas id="hero-particles"></canvas>
+      <!-- Particles handled by global canvas -->
 
       <!-- Glow Orbs -->
       <div class="glow-orb glow-orb-1"></div>
@@ -111,6 +111,10 @@
 
           <div class="col-lg-6 order-1 order-lg-1 hero-content" data-aos="fade-right" data-aos-delay="100">
             <div class="content-wrapper">
+              <div class="availability-badge" data-aos="fade-down" data-aos-delay="50">
+                <span class="availability-dot"></span>
+                <span class="availability-text">Open to Recruiters & Internships</span>
+              </div>
               <h4 class="hero-title hero-greeting-line"><span class="greeting-plain">Hi, I'm </span><span class="greeting-name-stylish">VIJAYAGOWTHAM</span></h4>
 
               <h1 class="hero-title hero-typed-line"><span class="typed" data-typed-items="AI Engineer, UI Designer, Frontend Developer,FullStack Developer"></span></h1>
@@ -134,8 +138,9 @@
               </div>
 
               <div class="social-links" data-aos="fade-up" data-aos-delay="400">
-                <a href="https://www.linkedin.com/in/vijayagowtham/"><i class="bi bi-linkedin"></i></a>
-                <a href="https://github.com/Vijayagowtham"><i class="bi bi-github"></i></a>
+                <a href="https://www.linkedin.com/in/vijayagowtham/" target="_blank" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                <a href="https://github.com/Vijayagowtham" target="_blank" title="GitHub"><i class="bi bi-github"></i></a>
+                <a href="mailto:vijayagowthamv@gmail.com" title="Email"><i class="bi bi-envelope-fill"></i></a>
               </div>
             </div>
           </div>
@@ -156,7 +161,7 @@
                   <span>Creative Ideas</span>
                 </div>
               </div>
-              <img src="assets/img/profile/my  circle coat pic.png" alt="projects Hero" class="img-fluid hero-main-image">
+              <img src="assets/img/profile/profile-hero.webp" alt="Vijaya Gowtham - Full Stack Developer" class="img-fluid hero-main-image" width="320" height="320" fetchpriority="high">
               <div class="image-overlay"></div>
             </div>
           </div>
@@ -264,7 +269,7 @@
 
               <div class="about-cta-section" data-aos="fade-up" data-aos-delay="450">
                 <div class="about-fun-fact">
-                  <span class="about-fun-fact-icon"><i class="fa-solid fa-mug-hot"></i></span>
+                  <span class="about-fun-fact-icon"><i class="bi bi-cup-hot-fill"></i></span>
                   <span class="about-fun-fact-text">Coffee-fueled designer based in INDIA</span>
                 </div>
                 <div class="about-action-buttons">
@@ -494,7 +499,7 @@
             <div class="education-section">
               <div class="section-header">
                 <h2><i class="bi bi-mortarboard"></i> Academic Excellence</h2>
-                <p class="section-subtitle">Lorem ipsum dolor sit amet consectetuer adipiscing elit aenean commodo ligula eget dolor aenean massa.</p>
+                <p class="section-subtitle">My academic journey and the milestones that shaped my expertise.</p>
               </div>
 
               <div class="education-timeline">
@@ -696,10 +701,10 @@
             <div class="col-lg-4 col-md-6 projects-item isotope-item filter-ui">
               <div class="proj-card">
                 <div class="proj-card-img">
-                  <img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=600&q=80" alt="CarSpot App" loading="lazy">
+                  <img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=600&q=80" alt="CarSpot " loading="lazy">
                 </div>
                 <div class="proj-card-body">
-                  <h3 class="proj-title">CarSpot App</h3>
+                  <h3 class="proj-title">CarSpot</h3>
                   <p class="proj-desc">A premium digital platform for car enthusiasts — a luxury car marketplace with advanced filtering, car comparison features, and a sleek modern responsive interface.</p>
                   <div class="proj-tags">
                     <span class="proj-tag">HTML</span>
@@ -1023,9 +1028,9 @@
         <p>© <span>Copyright</span> <strong class="px-1 sitename">Style</strong> <span>All Rights Reserved</span></p>
       </div>
       <div class="social-links d-flex justify-content-center">
-        <a href="https://github.com/Vijayagowtham"><i class="bi bi-github"></i></a>
-        <a href=""><i class="bi bi-instagram"></i></a>
-        <a href="https://www.linkedin.com/in/vijayagowtham/"><i class="bi bi-linkedin"></i></a>
+        <a href="https://github.com/Vijayagowtham" target="_blank" title="GitHub"><i class="bi bi-github"></i></a>
+        <a href="https://www.linkedin.com/in/vijayagowtham/" target="_blank" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+        <a href="mailto:vijayagowthamv@gmail.com" title="Email"><i class="bi bi-envelope-fill"></i></a>
       </div>
       <div class="credits">
         <!-- All the links in the footer should remain intact. -->
@@ -1038,23 +1043,20 @@
 
   </footer>
 
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <!-- Scroll Top Removed -->
+  
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/typed.js/typed.umd.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <!-- Vendor JS Files (deferred for performance) -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
+  <script src="assets/vendor/aos/aos.js" defer></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js" defer></script>
+  <script src="assets/vendor/typed.js/typed.umd.js" defer></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js" defer></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js" defer></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js" defer></script>
 
   <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/main.js" defer></script>
 
   <!-- EmailJS Script -->
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
@@ -1081,188 +1083,17 @@
           document.getElementById("contact-form").reset();
         }, function(error) {
           loadingEl.style.display = "none";
-          errorEl.textContent = "EmailJS Error: " + (error.text || error.message || JSON.stringify(error));
+          errorEl.textContent = "Something went wrong. Please try again!";
           errorEl.style.display = "block";
-          console.error("EmailJS Error:", error);
         });
     });
   </script>
 
-  <!-- Global Background Particle System -->
-  <script>
-  (function () {
-    const canvas = document.getElementById('global-particles-bg');
-    if (!canvas) return;
-    const ctx = canvas.getContext('2d');
-
-    let W, H, particles = [], sparks = [], raf;
-    const COUNT = window.innerWidth < 600 ? 50 : 110;
-    const MAX_DIST = window.innerWidth < 600 ? 110 : 160;
-    const MOUSE_DIST = 200;
-
-    const mouse = { x: -1000, y: -1000 };
-
-    function resize() {
-      W = canvas.width = window.innerWidth;
-      H = canvas.height = window.innerHeight;
-    }
-    
-    function rand(a, b) { return Math.random() * (b - a) + a; }
-
-    class Particle {
-      constructor() {
-        this.x = rand(0, W);
-        this.y = rand(0, H);
-        this.r = rand(1, 2.8);
-        this.vx = rand(-0.25, 0.25);
-        this.vy = rand(-0.25, 0.25);
-        this.baseAlpha = rand(0.3, 0.8);
-      }
-      update() {
-        // Mouse interaction (repulsion)
-        const dx = mouse.x - this.x;
-        const dy = mouse.y - this.y;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-        
-        if (dist < MOUSE_DIST) {
-          const force = (MOUSE_DIST - dist) / MOUSE_DIST;
-          this.x -= (dx / dist) * force * 0.6;
-          this.y -= (dy / dist) * force * 0.6;
-        }
-
-        this.x += this.vx;
-        this.y += this.vy;
-
-        // Wrap edges smoothly
-        if (this.x < -10) this.x = W + 10;
-        if (this.x > W + 10) this.x = -10;
-        if (this.y < -10) this.y = H + 10;
-        if (this.y > H + 10) this.y = -10;
-      }
-      draw() {
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(56, 189, 248, ${this.baseAlpha})`;
-        ctx.shadowBlur = 12;
-        ctx.shadowColor = 'rgba(56, 189, 248, 0.9)';
-        ctx.fill();
-        ctx.shadowBlur = 0; // reset for performance
-      }
-    }
-
-    class Spark {
-      constructor(p1, p2) {
-        this.p1 = p1;
-        this.p2 = p2;
-        this.progress = 0;
-        this.speed = rand(0.015, 0.035);
-      }
-      update() {
-        this.progress += this.speed;
-        return this.progress >= 1;
-      }
-      draw() {
-        const x = this.p1.x + (this.p2.x - this.p1.x) * this.progress;
-        const y = this.p1.y + (this.p2.y - this.p1.y) * this.progress;
-        
-        ctx.beginPath();
-        ctx.arc(x, y, 2.2, 0, Math.PI * 2);
-        ctx.fillStyle = '#ffffff';
-        ctx.shadowBlur = 15;
-        ctx.shadowColor = '#0ea5e9';
-        ctx.fill();
-        ctx.shadowBlur = 0;
-      }
-    }
-
-    function init() {
-      resize();
-      particles = [];
-      sparks = [];
-      for (let i = 0; i < COUNT; i++) particles.push(new Particle());
-    }
-
-    function draw() {
-      ctx.clearRect(0, 0, W, H);
-
-      // Draw connections
-      ctx.lineWidth = 0.8;
-      for (let i = 0; i < particles.length; i++) {
-        for (let j = i + 1; j < particles.length; j++) {
-          const dx = particles[i].x - particles[j].x;
-          const dy = particles[i].y - particles[j].y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-          
-          if (dist < MAX_DIST) {
-            const alpha = (1 - dist / MAX_DIST) * 0.2;
-            ctx.beginPath();
-            ctx.strokeStyle = `rgba(56, 189, 248, ${alpha})`;
-            ctx.moveTo(particles[i].x, particles[i].y);
-            ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.stroke();
-
-            // Randomly create data spark traveling along line
-            if (Math.random() < 0.0008) {
-              sparks.push(new Spark(particles[i], particles[j]));
-            }
-          }
-        }
-      }
-
-      // Draw mouse connections (adds interactive depth)
-      for (let i = 0; i < particles.length; i++) {
-        const dx = particles[i].x - mouse.x;
-        const dy = particles[i].y - mouse.y;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < MOUSE_DIST) {
-          const alpha = (1 - dist / MOUSE_DIST) * 0.35;
-          ctx.beginPath();
-          ctx.strokeStyle = `rgba(167, 139, 250, ${alpha})`; // Soft violet for interactive links
-          ctx.moveTo(particles[i].x, particles[i].y);
-          ctx.lineTo(mouse.x, mouse.y);
-          ctx.stroke();
-        }
-      }
-
-      // Draw nodes
-      particles.forEach(p => { p.update(); p.draw(); });
-      
-      // Update and draw sparks
-      sparks = sparks.filter(s => {
-        const done = s.update();
-        if (!done) s.draw();
-        return !done;
-      });
-
-      raf = requestAnimationFrame(draw);
-    }
-
-    // Performance optimizations
-    document.addEventListener('visibilitychange', () => {
-      if (document.hidden) {
-        cancelAnimationFrame(raf);
-      } else {
-        raf = requestAnimationFrame(draw);
-      }
-    });
-
-    window.addEventListener('resize', init);
-    
-    window.addEventListener('mousemove', (e) => {
-      mouse.x = e.clientX;
-      mouse.y = e.clientY;
-    });
-    
-    // Move mouse offscreen when it leaves the window
-    window.addEventListener('mouseleave', () => {
-      mouse.x = -1000;
-      mouse.y = -1000;
-    });
-
-    init();
-    draw();
-  })();
-  </script>
+  <!-- Global Particle System -->
+  <script src="assets/js/particles.js" defer></script>
+  <!-- Chatbot -->
+  <div id="vg-chatbot-root"></div>
+  <script src="assets/js/chatbot.js" defer></script>
 
 </body>
 

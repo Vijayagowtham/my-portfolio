@@ -138,9 +138,10 @@
   display: none;
 }
 
-/* Smooth theme transition */
-body,
-body * {
+/* Smooth theme transition — targeted for performance */
+.header, .footer, .section, .navmenu a, .btn, a, .scroll-top,
+.skill-cat-card, .cert-card, .achieve-card, .proj-card,
+.about-content-box, .about-expertise-panel, .contact-form, .info-box {
   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -179,57 +180,193 @@ h6 {
   font-family: var(--heading-font);
 }
 
-/* PHP Email Form Messages
-------------------------------*/
-.php-email-form .error-message {
-  display: none;
-  background:  #297df3;
-  color: #ffffff;
-  text-align: left;
-  padding: 15px;
-  margin-bottom: 24px;
-  font-weight: 600;
+
+
+/*--------------------------------------------------------------
+# Global Header
+/**
+* Template Name: Style
+* Template URL: https://bootstrapmade.com/style-bootstrap-projects-template/
+* Updated: Jul 02 2025 with Bootstrap v5.3.7
+* Author: BootstrapMade.com
+* License: https://bootstrapmade.com/license/
+*/
+
+@charset "UTF-8";
+
+/*--------------------------------------------------------------
+# Font & Color Variables
+# Help: https://bootstrapmade.com/color-system/
+--------------------------------------------------------------*/
+/* Fonts */
+:root {
+  --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --heading-font: "Quicksand",  sans-serif;
+  --nav-font: "Open Sans",  sans-serif;
 }
 
-.php-email-form .sent-message {
-  display: none;
-  color: #ffffff;
-  background: #059652;
-  text-align: center;
-  padding: 15px;
-  margin-bottom: 24px;
-  font-weight: 600;
+/* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
+:root { 
+  --background-color: #ffffff; /* Background color for the entire website, including individual sections */
+  --default-color: #314862; /* Default color used for the majority of the text content across the entire website */
+  --heading-color: #000000; /* Color for headings, subheadings and title throughout the website */
+  --accent-color:  #297df3; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --surface-color: color-mix(in srgb, #ffffff, transparent 15%); /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
+  --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
 }
 
-.php-email-form .loading {
-  display: none;
+/* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
+:root {
+  --nav-color: #314862;  /* The default color of the main navmenu links */
+  --nav-hover-color:  #297df3; /* Applied to main navmenu links when they are hovered over or active */
+  --nav-mobile-background-color: #000000; /* Used as the background color for mobile navigation menu */
+  --nav-dropdown-background-color: #297df3; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
+  --nav-dropdown-color: #acc4e0; /* Used for navigation links of the dropdown items in the navigation menu. */
+  --nav-dropdown-hover-color: #ffffff; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+}
+
+/* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
+
+.light-background {
+  --background-color: #f7faff;
+  --surface-color: #ffffff;
+}
+
+.dark-background {
+  --background-color: #297df3;
+  --default-color: #ffffff;
+  --heading-color: #ffffff;
+  --accent-color: #ffffff;
+  --surface-color: #000000;
+  --contrast-color: #ffffff;
+}
+
+/* Dark Theme Colors */
+[data-theme="dark"] {
+  --background-color: #0f1117;
+  --default-color: #c8cdd7;
+  --heading-color: #eef0f4;
+  --accent-color: #4a9ff5;
+  --surface-color: color-mix(in srgb, #1a1d27, transparent 25%);
+  --contrast-color: #ffffff;
+
+  --nav-color: #c8cdd7;
+  --nav-hover-color: #4a9ff5;
+  --nav-mobile-background-color: #0f1117;
+  --nav-dropdown-background-color: #1a1d27;
+  --nav-dropdown-color: #a0aab8;
+  --nav-dropdown-hover-color: #ffffff;
+}
+
+[data-theme="dark"] .light-background {
+  --background-color: #151821;
+  --surface-color: color-mix(in srgb, #1a1d27, transparent 25%);
+}
+
+[data-theme="dark"] .dark-background {
+  --background-color: #4a9ff5;
+  --default-color: #ffffff;
+  --heading-color: #ffffff;
+  --accent-color: #ffffff;
+  --surface-color: #0f1117;
+  --contrast-color: #ffffff;
+}
+
+[data-theme="dark"] .header {
+  --background-color: rgba(15, 17, 23, 0);
+}
+
+[data-theme="dark"] .scrolled .header {
+  --background-color: rgba(15, 17, 23, 0.9);
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 65px;
+  z-index: 999;
   background: var(--surface-color);
-  text-align: center;
-  padding: 15px;
-  margin-bottom: 24px;
-}
-
-.php-email-form .loading:before {
-  content: "";
-  display: inline-block;
+  border: 2px solid color-mix(in srgb, var(--default-color), transparent 80%);
+  color: var(--heading-color);
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
-  width: 24px;
-  height: 24px;
-  margin: 0 10px -6px 0;
-  border: 3px solid var(--accent-color);
-  border-top-color: var(--surface-color);
-  animation: php-email-form-loading 1s linear infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 20px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
 }
 
-@keyframes php-email-form-loading {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
+.theme-toggle:hover {
+  background: var(--accent-color);
+  color: var(--contrast-color);
+  border-color: var(--accent-color);
+  transform: rotate(30deg) scale(1.1);
 }
+
+.theme-toggle .bi-sun-fill {
+  display: none;
+}
+
+.theme-toggle .bi-moon-fill {
+  display: inline-block;
+}
+
+[data-theme="dark"] .theme-toggle .bi-sun-fill {
+  display: inline-block;
+}
+
+[data-theme="dark"] .theme-toggle .bi-moon-fill {
+  display: none;
+}
+
+/* Smooth theme transition — targeted for performance */
+.header, .footer, .section, .navmenu a, .btn, a, .scroll-top,
+.skill-cat-card, .cert-card, .achieve-card, .proj-card,
+.about-content-box, .about-expertise-panel, .contact-form, .info-box {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Smooth scroll */
+:root {
+  scroll-behavior: smooth;
+}
+
+/*--------------------------------------------------------------
+# General Styling & Shared Classes
+--------------------------------------------------------------*/
+body {
+  color: var(--default-color);
+  background-color: var(--background-color);
+  font-family: var(--default-font);
+}
+
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+a:hover {
+  color: color-mix(in srgb, var(--accent-color), transparent 25%);
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--heading-color);
+  font-family: var(--heading-font);
+}
+
+
 
 /*--------------------------------------------------------------
 # Global Header
@@ -241,6 +378,26 @@ h6 {
   padding: 15px 0;
   transition: all 0.5s;
   z-index: 997;
+  position: fixed !important;
+  top: 0;
+  width: 100%;
+}
+
+/* Scrolled state for sticky header - Glassmorphism */
+.scrolled .header {
+  --background-color: rgba(15, 23, 42, 0.85); /* Dark blue slate with opacity */
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(56, 189, 248, 0.15);
+  padding: 10px 0; /* Shrink slightly on scroll */
+}
+
+/* Light mode support for sticky header */
+[data-theme="light"] .scrolled .header {
+  --background-color: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(41, 125, 243, 0.15);
 }
 
 .header .logo {
@@ -598,7 +755,7 @@ section,
   left: 0;
   right: 0;
   bottom: 0;
-  background: url("../img/bg/abstract-bg-.webp") no-repeat center center;
+  background: url("../img/bg/abstract-bg-1.webp") no-repeat center center;
   background-size: cover;
   opacity: 0.08;
   z-index: 1;
@@ -5579,3 +5736,265 @@ html, body {
   -webkit-backdrop-filter: blur(8px);
 }
 
+/*--------------------------------------------------------------
+# Visual Emphasis — Typography & Keyword Highlighting
+--------------------------------------------------------------*/
+
+/* Section title gradient underline animation */
+.section-title h2 {
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.section-title.animate-line h2::after {
+  animation: lineGrow 0.8s ease forwards;
+}
+
+@keyframes lineGrow {
+  from { width: 0; opacity: 0; }
+  to { width: 120px; opacity: 1; }
+}
+
+/* Hero typed text emphasis */
+.hero .hero-typed-line .typed {
+  color: var(--accent-color);
+  text-shadow: 0 0 20px color-mix(in srgb, var(--accent-color), transparent 60%);
+  font-weight: 600;
+}
+
+/* Skill category header icon glow */
+.skill-cat-header i {
+  text-shadow: 0 0 12px currentColor;
+}
+
+/* Skill tags — stronger interaction */
+.scat-tag {
+  position: relative;
+  letter-spacing: 0.02em;
+}
+
+.scat-tag i {
+  filter: drop-shadow(0 0 4px currentColor);
+}
+
+/* Project title emphasis */
+.proj-card .proj-title {
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  position: relative;
+}
+
+.proj-card:hover .proj-title {
+  color: var(--accent-color);
+}
+
+/* Project tech tags glow on hover */
+.proj-tag {
+  transition: all 0.25s ease;
+}
+
+.proj-card:hover .proj-tag {
+  border-color: color-mix(in srgb, var(--accent-color), transparent 50%);
+  color: var(--accent-color);
+}
+
+/* Achievement title emphasis */
+.achieve-title {
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+/* Achievement accent styling */
+.achieve-accent {
+  background: linear-gradient(135deg, var(--accent-color), #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 800;
+}
+
+/* Certification card title emphasis */
+.cert-title {
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+/* Expertise stat numbers emphasis */
+.estat-number {
+  text-shadow: 0 0 15px color-mix(in srgb, var(--accent-color), transparent 55%);
+}
+
+/* Hero purecounter emphasis */
+.hero .purecounter {
+  text-shadow: 0 0 20px color-mix(in srgb, var(--accent-color), transparent 50%);
+}
+
+/* Internship role title emphasis */
+.resume .experience-card h3 {
+  font-weight: 700;
+  color: var(--accent-color);
+}
+
+/* Education degree emphasis */
+.resume .education-content h3 {
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+/* Contact section heading emphasis */
+.contact .info-box h3 {
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--heading-color), var(--accent-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Hero greeting name shimmer on hover */
+.hero .greeting-name-stylish {
+  transition: filter 0.3s ease;
+}
+
+.hero .greeting-name-stylish:hover {
+  filter: drop-shadow(0 0 24px rgba(56, 189, 248, 0.8)) brightness(1.15);
+}
+
+/*--------------------------------------------------------------
+# Global Particle Background
+--------------------------------------------------------------*/
+#global-particles-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none; /* Let clicks pass through to content */
+  background: transparent;
+}
+
+/*--------------------------------------------------------------
+# Availability Badge (Hero)
+--------------------------------------------------------------*/
+.availability-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 20px;
+  margin-bottom: 20px;
+  border-radius: 50px;
+  background: rgba(52, 211, 153, 0.08);
+  border: 1px solid rgba(52, 211, 153, 0.25);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  animation: badgePulseGlow 3s ease-in-out infinite;
+}
+
+.availability-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #34d399;
+  box-shadow: 0 0 8px rgba(52, 211, 153, 0.6);
+  animation: dotPulse 2s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+.availability-text {
+  font-family: var(--heading-font);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #34d399;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+@keyframes dotPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.7); }
+}
+
+@keyframes badgePulseGlow {
+  0%, 100% { box-shadow: 0 0 12px rgba(52, 211, 153, 0.08); }
+  50% { box-shadow: 0 0 20px rgba(52, 211, 153, 0.15); }
+}
+
+@media (max-width: 991px) {
+  .availability-badge {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 576px) {
+  .availability-badge {
+    padding: 6px 14px;
+    gap: 8px;
+  }
+  .availability-text {
+    font-size: 0.72rem;
+  }
+}
+
+/*--------------------------------------------------------------
+# Keyword / Tech Glow Highlights
+--------------------------------------------------------------*/
+/* Section title headings */
+[data-theme="dark"] .section-title h2 {
+  text-shadow: 0 0 18px rgba(255, 255, 255, 0.1);
+}
+
+/* Skill category card titles */
+[data-theme="dark"] .skill-cat-header h3 {
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.12);
+}
+
+/* Skill tags glow */
+[data-theme="dark"] .scat-tag {
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.06);
+}
+
+/* Project titles */
+[data-theme="dark"] .proj-title {
+  text-shadow: 0 0 14px rgba(255, 255, 255, 0.1);
+}
+
+/* Project tech tags */
+[data-theme="dark"] .proj-tag {
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.06);
+}
+
+/* Cert card titles */
+[data-theme="dark"] .cert-title {
+  text-shadow: 0 0 14px rgba(255, 255, 255, 0.1);
+}
+
+/* Achievement titles */
+[data-theme="dark"] .achieve-title {
+  text-shadow: 0 0 14px rgba(255, 255, 255, 0.1);
+}
+
+/* Experience role titles */
+[data-theme="dark"] .resume .experience-card h3 {
+  text-shadow: 0 0 12px rgba(74, 159, 245, 0.2);
+}
+
+/* Education degree titles */
+[data-theme="dark"] .resume .education-content h3 {
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.1);
+}
+
+/* Hero name glow */
+[data-theme="dark"] .greeting-name-stylish {
+  text-shadow: 0 0 20px rgba(56, 189, 248, 0.2);
+}
+
+/* About section expertise badge text */
+[data-theme="dark"] .expertise-badge {
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.06);
+}
+
+/* Marquee tech items */
+[data-theme="dark"] .marquee-item span {
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.08);
+}

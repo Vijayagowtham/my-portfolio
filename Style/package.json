@@ -1,0 +1,13 @@
+{
+  "name": "vg-portfolio",
+  "version": "1.0.0",
+  "description": "Vijaya Gowtham - Portfolio Website",
+  "type": "module",
+  "scripts": {
+    "start": "npx serve ."
+  },
+  "dependencies": {
+    "@google/genai": "^0.1.2",
+    "dotenv": "^16.4.5"
+  }
+}
