@@ -507,7 +507,7 @@ h6 {
   }
 
   .navmenu ul {
-    display: none;
+    display: flex;
     position: fixed;
     top: 0;
     right: -280px;
@@ -520,7 +520,7 @@ h6 {
     margin: 0;
     background-color: var(--nav-mobile-background-color);
     z-index: 997;
-    transition: 0.3s;
+    transition: right 0.3s ease-in-out;
     overflow-y: auto;
   }
 
@@ -540,16 +540,16 @@ h6 {
   }
 
   .mobile-nav-active .navmenu ul {
-    display: flex;
     right: 0;
   }
 
   .mobile-nav-active .mobile-nav-toggle {
     position: fixed;
-    right: 290px;
-    top: 20px;
-    z-index: 999;
+    right: 15px;
+    top: 15px;
+    z-index: 9999;
     font-size: 32px;
+    color: #ffffff;
   }
 
   .mobile-nav-active {
