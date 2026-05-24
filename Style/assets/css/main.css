@@ -696,7 +696,7 @@ h6 {
 section,
 .section {
   color: var(--default-color);
-  background-color: var(--background-color);
+  background-color: color-mix(in srgb, var(--background-color), transparent 40%);
   padding: 60px 0;
   overflow: clip;
 }
@@ -3920,7 +3920,7 @@ section,
 --------------------------------------------------------------*/
 .tech-tools {
   padding: 80px 0;
-  background-color: var(--background-color);
+  background-color: transparent;
   overflow: hidden;
 }
 
