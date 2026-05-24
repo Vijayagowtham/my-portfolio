@@ -205,31 +205,31 @@ h6 {
   --nav-font: "Open Sans",  sans-serif;
 }
 
-/* Global Colors - Vibrant Futuristic Light Theme */
+/* Global Colors - Professional Light Theme */
 :root { 
-  --background-color: #f0f8ff; /* Soft tech-blue background */
-  --default-color: #1e293b; /* Slate 800 - High contrast reading */
-  --heading-color: #0f172a; /* Slate 900 */
-  --accent-color:  #6366f1; /* Electric Indigo - Primary Action Color */
-  --surface-color: rgba(255, 255, 255, 0.75); /* Stronger glassmorphism base */
+  --background-color: #f8fafc; /* Sophisticated slate-tinted off-white background */
+  --default-color: #334155; /* Slate 700 - Better readability */
+  --heading-color: #0f172a; /* Slate 900 - Deep slate for headings */
+  --accent-color:  #2563eb; /* Blue 600 - Professional vibrant blue */
+  --surface-color: rgba(255, 255, 255, 0.9); /* Premium glassmorphism base for cards */
   --contrast-color: #ffffff; /* Contrast color for text */
 }
 
 /* Nav Menu Colors - Light Theme Polish */
 :root {
-  --nav-color: #1e293b;
-  --nav-hover-color:  #6366f1;
-  --nav-mobile-background-color: rgba(255, 255, 255, 0.95); /* Frosted glass mobile nav */
+  --nav-color: #334155;
+  --nav-hover-color:  #2563eb;
+  --nav-mobile-background-color: #ffffff; /* Clean white mobile nav */
   --nav-dropdown-background-color: #ffffff; 
-  --nav-dropdown-color: #334155; 
-  --nav-dropdown-hover-color: #6366f1; 
+  --nav-dropdown-color: #475569; 
+  --nav-dropdown-hover-color: #2563eb; 
 }
 
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
 
 .light-background {
-  --background-color: #e0f2fe; /* Soft cyan-tinted alternating section */
-  --surface-color: rgba(255, 255, 255, 0.85);
+  --background-color: #f1f5f9; /* Slate 100 - Alternating section color */
+  --surface-color: #ffffff;
 }
 
 .dark-background {
@@ -6000,8 +6000,8 @@ html, body {
 }
 
 /* ==========================================================
-   Vibrant Light Theme Component Polish
-   Ensures soft shadows, glassmorphism, and neon blooming 
+   Light Theme Component Polish
+   Ensures soft shadows and modern premium aesthetics 
    without modifying Dark Mode.
    ========================================================== */
 :root:not([data-theme="dark"]) .skill-cat-card,
@@ -6011,11 +6011,10 @@ html, body {
 :root:not([data-theme="dark"]) .info-box,
 :root:not([data-theme="dark"]) .contact-form,
 :root:not([data-theme="dark"]) .resume .experience-card {
-  border-color: rgba(255, 255, 255, 0.8) !important;
-  box-shadow: 0 8px 32px rgba(99, 102, 241, 0.08) !important;
-  background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(240,249,255,0.6) 100%) !important;
-  backdrop-filter: blur(16px) !important;
-  -webkit-backdrop-filter: blur(16px) !important;
+  border-color: rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03), 0 1px 3px rgba(0, 0, 0, 0.02);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
 }
 
 :root:not([data-theme="dark"]) .skill-cat-card:hover,
@@ -6023,166 +6022,63 @@ html, body {
 :root:not([data-theme="dark"]) .achieve-card:hover,
 :root:not([data-theme="dark"]) .proj-card:hover,
 :root:not([data-theme="dark"]) .resume .experience-card:hover {
-  transform: translateY(-4px) !important;
-  border-color: rgba(99, 102, 241, 0.3) !important;
-  box-shadow: 0 12px 40px rgba(99, 102, 241, 0.15) !important;
-  background: linear-gradient(135deg, rgba(255,255,255,0.98) 0%, rgba(224,231,255,0.8) 100%) !important;
+  transform: translateY(-4px);
+  border-color: rgba(0, 0, 0, 0.08);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06), 0 4px 6px rgba(0, 0, 0, 0.03);
 }
 
 /* Modern inputs for Light Theme */
 :root:not([data-theme="dark"]) .contact .contact-form .form-control {
-  border-color: rgba(99, 102, 241, 0.2);
-  background: rgba(255, 255, 255, 0.9);
-  color: #1e293b;
+  border-color: rgba(0, 0, 0, 0.1);
+  background: #ffffff;
+  color: #334155;
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.02);
 }
 
 :root:not([data-theme="dark"]) .contact .contact-form .form-control:focus {
   border-color: var(--accent-color);
-  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
-  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
 }
 
 /* Premium Button Colors for Light Theme */
-:root:not([data-theme="dark"]) .btn-primary {
-  background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%) !important;
-  border: none !important;
-  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3) !important;
+:root:not([data-theme="dark"]) .btn {
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+}
+
+:root:not([data-theme="dark"]) .btn:hover {
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Certificate & Achievement Button Fix for Light Theme */
+:root:not([data-theme="dark"]) .cert-btn,
+:root:not([data-theme="dark"]) .cert-btn-highlight,
+:root:not([data-theme="dark"]) .achieve-btn-certificate {
+  background: var(--accent-color);
   color: #ffffff !important;
-}
-
-:root:not([data-theme="dark"]) .btn-primary:hover {
-  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4) !important;
-  transform: translateY(-2px) !important;
-  background: linear-gradient(135deg, #4f46e5 0%, #9333ea 100%) !important;
-}
-
-/* ==========================================================
-   Light Mode Hologram Robot & HUD Animations
-   ========================================================== */
-/* Hide Light Visual in Dark Mode, Hide Dark Visual in Light Mode */
-:root:not([data-theme="dark"]) .dark-mode-visual { display: none !important; }
-[data-theme="dark"] .light-mode-visual { display: none !important; }
-
-.hologram-container {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.hologram-core {
-  position: relative;
-  z-index: 5;
-  animation: hologramFloat 6s ease-in-out infinite;
-  filter: drop-shadow(0 0 25px rgba(99, 102, 241, 0.4)) drop-shadow(0 0 50px rgba(13, 148, 136, 0.2));
-  border-radius: 50%;
-  width: 280px;
-  height: 280px;
-  object-fit: cover;
-}
-
-/* Hologram HUD Base */
-.hologram-hud {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 120%;
-  height: 120%;
-  pointer-events: none;
-  z-index: 2;
-}
-
-/* Glowing HUD Rings */
-.hud-ring {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
   border: 1px solid transparent;
+  transition: all 0.3s ease;
 }
 
-.hud-ring-1 {
-  width: 85%;
-  height: 85%;
-  border-top: 2px solid rgba(13, 148, 136, 0.6);
-  border-right: 2px solid rgba(37, 99, 235, 0.6);
-  border-bottom: 2px solid rgba(99, 102, 241, 0.6);
-  animation: hudSpin 15s linear infinite;
-  box-shadow: 0 0 20px rgba(99, 102, 241, 0.15);
+:root:not([data-theme="dark"]) .cert-btn:hover,
+:root:not([data-theme="dark"]) .cert-btn-highlight:hover,
+:root:not([data-theme="dark"]) .achieve-btn-certificate:hover {
+  background: #1d4ed8; /* Darker blue on hover */
+  color: #ffffff !important;
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.3);
+  transform: translateY(-2px);
 }
 
-.hud-ring-2 {
-  width: 95%;
-  height: 95%;
-  border: 1px dashed rgba(37, 99, 235, 0.4);
-  animation: hudSpinReverse 20s linear infinite;
-}
-
-.hud-ring-3 {
-  width: 70%;
-  height: 70%;
-  border-left: 3px solid rgba(13, 148, 136, 0.5);
-  border-bottom: 3px solid rgba(99, 102, 241, 0.5);
-  animation: hudSpin 10s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-  opacity: 0.6;
-}
-
-/* Holographic Scanner Line */
-.hud-scanner {
-  position: absolute;
-  top: 0;
-  left: 10%;
-  width: 80%;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, rgba(37, 99, 235, 0.8), rgba(99, 102, 241, 0.8), transparent);
-  box-shadow: 0 0 15px rgba(37, 99, 235, 0.6);
-  animation: hudScan 4s ease-in-out infinite alternate;
-  z-index: 6;
-}
-
-/* Data Nodes */
-.hud-data-nodes {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
-
-.node {
-  position: absolute;
-  width: 6px;
-  height: 6px;
-  background: #0d9488;
-  border-radius: 50%;
-  box-shadow: 0 0 10px #0d9488;
-  animation: nodePulse 2s ease-in-out infinite;
-}
-
-.node-1 { top: 15%; left: 20%; animation-delay: 0s; }
-.node-2 { bottom: 25%; right: 15%; animation-delay: 0.7s; background: #6366f1; box-shadow: 0 0 10px #6366f1;}
-.node-3 { top: 40%; right: 10%; animation-delay: 1.4s; background: #2563eb; box-shadow: 0 0 10px #2563eb;}
-
-/* HUD Keyframes */
-@keyframes hologramFloat {
-  0%, 100% { transform: translateY(0) scale(1); filter: drop-shadow(0 0 25px rgba(37, 99, 235, 0.4)) drop-shadow(0 0 50px rgba(13, 148, 136, 0.2)); }
-  50% { transform: translateY(-15px) scale(1.02); filter: drop-shadow(0 0 35px rgba(99, 102, 241, 0.5)) drop-shadow(0 0 60px rgba(37, 99, 235, 0.3)); }
-}
-
-@keyframes hudSpin { 100% { transform: translate(-50%, -50%) rotate(360deg); } }
-@keyframes hudSpinReverse { 100% { transform: translate(-50%, -50%) rotate(-360deg); } }
-
-@keyframes hudScan {
-  0% { top: 10%; opacity: 0; }
-  10% { opacity: 1; }
-  90% { opacity: 1; }
-  100% { top: 90%; opacity: 0; }
-}
-
-@keyframes nodePulse {
-  0%, 100% { transform: scale(1); opacity: 0.5; }
-  50% { transform: scale(1.8); opacity: 1; }
+:root:not([data-theme="dark"]) .cert-btn:active,
+:root:not([data-theme="dark"]) .cert-btn-highlight:active,
+:root:not([data-theme="dark"]) .achieve-btn-certificate:active,
+:root:not([data-theme="dark"]) .cert-btn:focus,
+:root:not([data-theme="dark"]) .cert-btn-highlight:focus,
+:root:not([data-theme="dark"]) .achieve-btn-certificate:focus {
+  background: #1e40af !important; /* Deep solid blue for active/click to prevent white washout */
+  color: #ffffff !important;
+  border-color: rgba(37, 99, 235, 0.5);
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.4) !important;
+  transform: translateY(0);
 }
