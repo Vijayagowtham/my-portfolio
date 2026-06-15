@@ -194,13 +194,13 @@ h6 {
 .mobile-nav-overlay {
   position: fixed;
   inset: 0;
-  background-color: rgba(15, 17, 23, 0.8);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
+  background-color: rgba(15, 17, 23, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   z-index: 1005;
   opacity: 0;
   visibility: hidden;
-  transition: all 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
 }
 
 body.mobile-nav-active .mobile-nav-overlay {
@@ -224,7 +224,7 @@ body.mobile-nav-active .mobile-nav-overlay {
   color: var(--nav-hover-color);
 }
 
-/* Mobile: sidebar nav */
+/* Mobile: full-screen overlay nav */
 @media (max-width: 1199px) {
   .mobile-nav-toggle {
     display: block;
@@ -232,38 +232,44 @@ body.mobile-nav-active .mobile-nav-overlay {
 
   .navmenu ul {
     display: flex;
+    flex-direction: column;
     position: fixed;
     top: 0;
-    right: -280px;
+    right: -100%;
     bottom: 0;
-    width: 280px;
-    flex-direction: column;
+    width: min(300px, 85vw);
     align-items: stretch;
     gap: 0;
-    padding: 60px 15px 20px;
+    /* Dynamic padding: enough space for the ✕ button at top, snug at bottom */
+    padding: 58px 12px 12px;
     margin: 0;
-    background-color: var(--nav-mobile-background-color);
+    background: linear-gradient(160deg, #0f1117 60%, color-mix(in srgb, var(--accent-color), #0f1117 88%) 100%);
+    border-left: 1px solid color-mix(in srgb, var(--accent-color), transparent 80%);
     z-index: 1010;
-    transition: right 0.3s ease-in-out;
-    overflow-y: auto;
+    transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    overflow: hidden;           /* NO internal scroll */
+    /* Distribute items to fill the available height */
+    justify-content: space-evenly;
   }
 
   .navmenu a,
   .navmenu a:focus {
     color: var(--nav-color);
-    padding: 14px 20px;
-    font-size: 17px;
+    /* Use clamp so items scale gracefully on all screen heights */
+    padding: clamp(7px, 1.5vh, 14px) 16px;
+    font-size: clamp(13px, 2.2vw + 0.5vh, 16px);
     font-weight: 500;
-    border-radius: 12px;
+    border-radius: 10px;
     justify-content: flex-start;
-    min-height: 48px;
-    margin-bottom: 8px;
-    transition: all 0.3s ease;
+    min-height: 0;              /* Let clamp padding control height */
+    margin-bottom: 0;           /* Spacing handled by justify-content */
+    transition: all 0.25s ease;
+    white-space: nowrap;
   }
 
   .navmenu a:hover {
     color: var(--nav-hover-color);
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: rgba(255, 255, 255, 0.06);
     transform: translateX(4px);
   }
 
@@ -273,6 +279,7 @@ body.mobile-nav-active .mobile-nav-overlay {
     color: var(--accent-color);
     background-color: color-mix(in srgb, var(--accent-color), transparent 85%);
     font-weight: 600;
+    transform: none;
   }
 
   .mobile-nav-active .navmenu ul {
@@ -284,7 +291,7 @@ body.mobile-nav-active .mobile-nav-overlay {
     right: 15px;
     top: 15px;
     z-index: 1020;
-    font-size: 32px;
+    font-size: 30px;
     color: #ffffff;
   }
 
@@ -292,6 +299,7 @@ body.mobile-nav-active .mobile-nav-overlay {
     overflow: hidden;
   }
 }
+
 
 /*--------------------------------------------------------------
 # Global Footer
@@ -4612,14 +4620,6 @@ html, body {
     font-size: 20px;
   }
 
-  /* Mobile nav */
-  .navmenu ul {
-    width: 260px;
-    right: -260px;
-  }
-  .mobile-nav-active .mobile-nav-toggle {
-    right: 270px;
-  }
 }
 
 /* ---- Extra-small phones (max 400px) ---- */
@@ -5350,8 +5350,6 @@ html, body {
   .contact .info-box h3 { font-size: 1.3rem; }
   .contact .contact-form h3 { font-size: 1.3rem; }
 
-  /* Nav on mobile */
-  .navmenu ul { width: 260px; right: -260px; }
 
   /* Footer */
   .footer { text-align: center; padding: 25px 0; }
