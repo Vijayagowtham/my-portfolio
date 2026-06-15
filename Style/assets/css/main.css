@@ -19,51 +19,18 @@
   --nav-font: "Open Sans",  sans-serif;
 }
 
-/* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
+/* Global Colors - Dark Theme (Default) */
 :root { 
-  --background-color: #ffffff; /* Background color for the entire website, including individual sections */
-  --default-color: #314862; /* Default color used for the majority of the text content across the entire website */
-  --heading-color: #000000; /* Color for headings, subheadings and title throughout the website */
-  --accent-color:  #297df3; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
-  --surface-color: color-mix(in srgb, #ffffff, transparent 15%); /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
-  --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
-}
-
-/* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
-:root {
-  --nav-color: #314862;  /* The default color of the main navmenu links */
-  --nav-hover-color:  #297df3; /* Applied to main navmenu links when they are hovered over or active */
-  --nav-mobile-background-color: #000000; /* Used as the background color for mobile navigation menu */
-  --nav-dropdown-background-color: #297df3; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
-  --nav-dropdown-color: #acc4e0; /* Used for navigation links of the dropdown items in the navigation menu. */
-  --nav-dropdown-hover-color: #ffffff; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
-}
-
-/* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
-
-.light-background {
-  --background-color: #f7faff;
-  --surface-color: #ffffff;
-}
-
-.dark-background {
-  --background-color: #297df3;
-  --default-color: #ffffff;
-  --heading-color: #ffffff;
-  --accent-color: #ffffff;
-  --surface-color: #000000;
-  --contrast-color: #ffffff;
-}
-
-/* Dark Theme Colors */
-[data-theme="dark"] {
   --background-color: #0f1117;
   --default-color: #c8cdd7;
   --heading-color: #eef0f4;
   --accent-color: #4a9ff5;
   --surface-color: color-mix(in srgb, #1a1d27, transparent 25%);
   --contrast-color: #ffffff;
+}
 
+/* Nav Menu Colors */
+:root {
   --nav-color: #c8cdd7;
   --nav-hover-color: #4a9ff5;
   --nav-mobile-background-color: #0f1117;
@@ -72,256 +39,19 @@
   --nav-dropdown-hover-color: #ffffff;
 }
 
-[data-theme="dark"] .light-background {
+/* Color Presets */
+.light-background {
   --background-color: #151821;
   --surface-color: color-mix(in srgb, #1a1d27, transparent 25%);
-}
-
-[data-theme="dark"] .dark-background {
-  --background-color: #4a9ff5;
-  --default-color: #ffffff;
-  --heading-color: #ffffff;
-  --accent-color: #ffffff;
-  --surface-color: #0f1117;
-  --contrast-color: #ffffff;
-}
-
-[data-theme="dark"] .header {
-  --background-color: rgba(15, 17, 23, 0);
-}
-
-[data-theme="dark"] .scrolled .header {
-  --background-color: rgba(15, 17, 23, 0.9);
-}
-
-/* Theme Toggle Button */
-.theme-toggle {
-  position: fixed;
-  top: 20px;
-  right: 65px;
-  z-index: 999;
-  background: var(--surface-color);
-  border: 2px solid color-mix(in srgb, var(--default-color), transparent 80%);
-  color: var(--heading-color);
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  font-size: 20px;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
-}
-
-.theme-toggle:hover {
-  background: var(--accent-color);
-  color: var(--contrast-color);
-  border-color: var(--accent-color);
-  transform: rotate(30deg) scale(1.1);
-}
-
-.theme-toggle .bi-sun-fill {
-  display: none;
-}
-
-.theme-toggle .bi-moon-fill {
-  display: inline-block;
-}
-
-[data-theme="dark"] .theme-toggle .bi-sun-fill {
-  display: inline-block;
-}
-
-[data-theme="dark"] .theme-toggle .bi-moon-fill {
-  display: none;
-}
-
-/* Smooth theme transition — targeted for performance */
-.header, .footer, .section, .navmenu a, .btn, a, .scroll-top,
-.skill-cat-card, .cert-card, .achieve-card, .proj-card,
-.about-content-box, .about-expertise-panel, .contact-form, .info-box {
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Smooth scroll */
-:root {
-  scroll-behavior: smooth;
-}
-
-/*--------------------------------------------------------------
-# General Styling & Shared Classes
---------------------------------------------------------------*/
-body {
-  color: var(--default-color);
-  background-color: var(--background-color);
-  font-family: var(--default-font);
-}
-
-a {
-  color: var(--accent-color);
-  text-decoration: none;
-  transition: 0.3s;
-}
-
-a:hover {
-  color: color-mix(in srgb, var(--accent-color), transparent 25%);
-  text-decoration: none;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: var(--heading-color);
-  font-family: var(--heading-font);
-}
-
-
-
-/*--------------------------------------------------------------
-# Global Header
-/**
-* Template Name: Style
-* Template URL: https://bootstrapmade.com/style-bootstrap-projects-template/
-* Updated: Jul 02 2025 with Bootstrap v5.3.7
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
-
-@charset "UTF-8";
-
-/*--------------------------------------------------------------
-# Font & Color Variables
-# Help: https://bootstrapmade.com/color-system/
---------------------------------------------------------------*/
-/* Fonts */
-:root {
-  --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --heading-font: "Quicksand",  sans-serif;
-  --nav-font: "Open Sans",  sans-serif;
-}
-
-/* Global Colors - Professional Light Theme */
-:root { 
-  --background-color: #f8fafc; /* Sophisticated slate-tinted off-white background */
-  --default-color: #334155; /* Slate 700 - Better readability */
-  --heading-color: #0f172a; /* Slate 900 - Deep slate for headings */
-  --accent-color:  #2563eb; /* Blue 600 - Professional vibrant blue */
-  --surface-color: rgba(255, 255, 255, 0.9); /* Premium glassmorphism base for cards */
-  --contrast-color: #ffffff; /* Contrast color for text */
-}
-
-/* Nav Menu Colors - Light Theme Polish */
-:root {
-  --nav-color: #334155;
-  --nav-hover-color:  #2563eb;
-  --nav-mobile-background-color: #ffffff; /* Clean white mobile nav */
-  --nav-dropdown-background-color: #ffffff; 
-  --nav-dropdown-color: #475569; 
-  --nav-dropdown-hover-color: #2563eb; 
-}
-
-/* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
-
-.light-background {
-  --background-color: #f1f5f9; /* Slate 100 - Alternating section color */
-  --surface-color: #ffffff;
 }
 
 .dark-background {
-  --background-color: #297df3;
-  --default-color: #ffffff;
-  --heading-color: #ffffff;
-  --accent-color: #ffffff;
-  --surface-color: #000000;
-  --contrast-color: #ffffff;
-}
-
-/* Dark Theme Colors */
-[data-theme="dark"] {
-  --background-color: #0f1117;
-  --default-color: #c8cdd7;
-  --heading-color: #eef0f4;
-  --accent-color: #4a9ff5;
-  --surface-color: color-mix(in srgb, #1a1d27, transparent 25%);
-  --contrast-color: #ffffff;
-
-  --nav-color: #c8cdd7;
-  --nav-hover-color: #4a9ff5;
-  --nav-mobile-background-color: #0f1117;
-  --nav-dropdown-background-color: #1a1d27;
-  --nav-dropdown-color: #a0aab8;
-  --nav-dropdown-hover-color: #ffffff;
-}
-
-[data-theme="dark"] .light-background {
-  --background-color: #151821;
-  --surface-color: color-mix(in srgb, #1a1d27, transparent 25%);
-}
-
-[data-theme="dark"] .dark-background {
   --background-color: #4a9ff5;
   --default-color: #ffffff;
   --heading-color: #ffffff;
   --accent-color: #ffffff;
   --surface-color: #0f1117;
   --contrast-color: #ffffff;
-}
-
-[data-theme="dark"] .header {
-  --background-color: rgba(15, 17, 23, 0);
-}
-
-[data-theme="dark"] .scrolled .header {
-  --background-color: rgba(15, 17, 23, 0.9);
-}
-
-/* Theme Toggle Button */
-.theme-toggle {
-  position: fixed;
-  top: 20px;
-  right: 65px;
-  z-index: 999;
-  background: var(--surface-color);
-  border: 2px solid color-mix(in srgb, var(--default-color), transparent 80%);
-  color: var(--heading-color);
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  font-size: 20px;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
-}
-
-.theme-toggle:hover {
-  background: var(--accent-color);
-  color: var(--contrast-color);
-  border-color: var(--accent-color);
-  transform: rotate(30deg) scale(1.1);
-}
-
-.theme-toggle .bi-sun-fill {
-  display: none;
-}
-
-.theme-toggle .bi-moon-fill {
-  display: inline-block;
-}
-
-[data-theme="dark"] .theme-toggle .bi-sun-fill {
-  display: inline-block;
-}
-
-[data-theme="dark"] .theme-toggle .bi-moon-fill {
-  display: none;
 }
 
 /* Smooth theme transition — targeted for performance */
@@ -372,12 +102,12 @@ h6 {
 # Global Header
 --------------------------------------------------------------*/
 .header {
-  --background-color: rgba(255, 255, 255, 0);
+  --background-color: rgba(15, 17, 23, 0);
   color: var(--default-color);
   background-color: var(--background-color);
   padding: 15px 0;
   transition: all 0.5s;
-  z-index: 997;
+  z-index: 1000;
   position: fixed !important;
   top: 0;
   width: 100%;
@@ -385,19 +115,12 @@ h6 {
 
 /* Scrolled state for sticky header - Glassmorphism */
 .scrolled .header {
-  --background-color: rgba(15, 23, 42, 0.85); /* Dark blue slate with opacity */
+  --background-color: rgba(15, 17, 23, 0.9);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(56, 189, 248, 0.15);
-  padding: 10px 0; /* Shrink slightly on scroll */
-}
-
-/* Light mode support for sticky header */
-[data-theme="light"] .scrolled .header {
-  --background-color: rgba(255, 255, 255, 0.85);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  border-bottom: 1px solid rgba(41, 125, 243, 0.15);
+  padding: 10px 0;
 }
 
 .header .logo {
@@ -415,7 +138,7 @@ h6 {
   font-weight: 700;
   font-family: var(--heading-font);
   letter-spacing: 2px;
-  background: linear-gradient(135deg, var(--accent-color), #1a3a6e);
+  background: linear-gradient(135deg, #4a9ff5, #a0d4ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -424,13 +147,6 @@ h6 {
 
 .header .logo h1:hover {
   letter-spacing: 3px;
-}
-
-[data-theme="dark"] .header .logo h1 {
-  background: linear-gradient(135deg, #4a9ff5, #a0d4ff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
 }
 
 /*--------------------------------------------------------------
@@ -462,26 +178,34 @@ h6 {
   display: flex;
   align-items: center;
   white-space: nowrap;
-  transition: 0.3s;
-  border-radius: 25px;
+  transition: all 0.3s ease;
+  border-radius: 20px;
 }
 
 .navmenu a:hover,
-.navmenu .active,
-.navmenu .active:focus {
+.navmenu a.active,
+.navmenu a.active:focus,
+.navmenu a.active:hover {
   color: var(--nav-hover-color);
+  background-color: color-mix(in srgb, var(--accent-color), transparent 85%);
 }
 
-/* Theme toggle in nav - override fixed positioning */
-.navmenu .theme-toggle {
-  position: relative;
-  top: auto;
-  right: auto;
-  width: 38px;
-  height: 38px;
-  font-size: 18px;
-  margin-left: 10px;
-  flex-shrink: 0;
+/* Mobile nav overlay */
+.mobile-nav-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(15, 17, 23, 0.8);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  z-index: 1005;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+body.mobile-nav-active .mobile-nav-overlay {
+  opacity: 1;
+  visibility: visible;
 }
 
 /* Mobile nav toggle */
@@ -491,7 +215,7 @@ h6 {
   line-height: 0;
   cursor: pointer;
   display: none;
-  z-index: 998;
+  z-index: 1020;
   transition: 0.3s;
   margin-left: 10px;
 }
@@ -516,38 +240,50 @@ h6 {
     flex-direction: column;
     align-items: stretch;
     gap: 0;
-    padding: 80px 0 20px;
+    padding: 60px 15px 20px;
     margin: 0;
     background-color: var(--nav-mobile-background-color);
-    z-index: 997;
+    z-index: 1010;
     transition: right 0.3s ease-in-out;
     overflow-y: auto;
   }
 
   .navmenu a,
   .navmenu a:focus {
-    color: #ffffff;
-    padding: 12px 25px;
-    font-size: 16px;
-    border-radius: 0;
+    color: var(--nav-color);
+    padding: 14px 20px;
+    font-size: 17px;
+    font-weight: 500;
+    border-radius: 12px;
     justify-content: flex-start;
+    min-height: 48px;
+    margin-bottom: 8px;
+    transition: all 0.3s ease;
   }
 
-  .navmenu a:hover,
-  .navmenu .active,
-  .navmenu .active:focus {
+  .navmenu a:hover {
     color: var(--nav-hover-color);
+    background-color: rgba(255, 255, 255, 0.05);
+    transform: translateX(4px);
+  }
+
+  .navmenu a.active,
+  .navmenu a.active:focus,
+  .navmenu a.active:hover {
+    color: var(--accent-color);
+    background-color: color-mix(in srgb, var(--accent-color), transparent 85%);
+    font-weight: 600;
   }
 
   .mobile-nav-active .navmenu ul {
-    right: 0;
+    right: 0 !important;
   }
 
   .mobile-nav-active .mobile-nav-toggle {
     position: fixed;
     right: 15px;
     top: 15px;
-    z-index: 9999;
+    z-index: 1020;
     font-size: 32px;
     color: #ffffff;
   }
@@ -555,16 +291,6 @@ h6 {
   .mobile-nav-active {
     overflow: hidden;
   }
-}
-
-/* Scrolled header background */
-.scrolled .header {
-  --background-color: rgba(255, 255, 255, 0.95);
-  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
-}
-
-[data-theme="dark"] .scrolled .header {
-  --background-color: rgba(15, 17, 23, 0.95);
 }
 
 /*--------------------------------------------------------------
@@ -5999,86 +5725,4 @@ html, body {
   text-shadow: 0 0 8px rgba(255, 255, 255, 0.08);
 }
 
-/* ==========================================================
-   Light Theme Component Polish
-   Ensures soft shadows and modern premium aesthetics 
-   without modifying Dark Mode.
-   ========================================================== */
-:root:not([data-theme="dark"]) .skill-cat-card,
-:root:not([data-theme="dark"]) .cert-card,
-:root:not([data-theme="dark"]) .achieve-card,
-:root:not([data-theme="dark"]) .proj-card,
-:root:not([data-theme="dark"]) .info-box,
-:root:not([data-theme="dark"]) .contact-form,
-:root:not([data-theme="dark"]) .resume .experience-card {
-  border-color: rgba(0, 0, 0, 0.05);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03), 0 1px 3px rgba(0, 0, 0, 0.02);
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(8px);
-}
 
-:root:not([data-theme="dark"]) .skill-cat-card:hover,
-:root:not([data-theme="dark"]) .cert-card:hover,
-:root:not([data-theme="dark"]) .achieve-card:hover,
-:root:not([data-theme="dark"]) .proj-card:hover,
-:root:not([data-theme="dark"]) .resume .experience-card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(0, 0, 0, 0.08);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06), 0 4px 6px rgba(0, 0, 0, 0.03);
-}
-
-/* Modern inputs for Light Theme */
-:root:not([data-theme="dark"]) .contact .contact-form .form-control {
-  border-color: rgba(0, 0, 0, 0.1);
-  background: #ffffff;
-  color: #334155;
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.02);
-}
-
-:root:not([data-theme="dark"]) .contact .contact-form .form-control:focus {
-  border-color: var(--accent-color);
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
-}
-
-/* Premium Button Colors for Light Theme */
-:root:not([data-theme="dark"]) .btn {
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
-}
-
-:root:not([data-theme="dark"]) .btn:hover {
-  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.3);
-  transform: translateY(-2px);
-}
-
-/* Certificate & Achievement Button Fix for Light Theme */
-:root:not([data-theme="dark"]) .cert-btn,
-:root:not([data-theme="dark"]) .cert-btn-highlight,
-:root:not([data-theme="dark"]) .achieve-btn-certificate {
-  background: var(--accent-color);
-  color: #ffffff !important;
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
-  border: 1px solid transparent;
-  transition: all 0.3s ease;
-}
-
-:root:not([data-theme="dark"]) .cert-btn:hover,
-:root:not([data-theme="dark"]) .cert-btn-highlight:hover,
-:root:not([data-theme="dark"]) .achieve-btn-certificate:hover {
-  background: #1d4ed8; /* Darker blue on hover */
-  color: #ffffff !important;
-  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.3);
-  transform: translateY(-2px);
-}
-
-:root:not([data-theme="dark"]) .cert-btn:active,
-:root:not([data-theme="dark"]) .cert-btn-highlight:active,
-:root:not([data-theme="dark"]) .achieve-btn-certificate:active,
-:root:not([data-theme="dark"]) .cert-btn:focus,
-:root:not([data-theme="dark"]) .cert-btn-highlight:focus,
-:root:not([data-theme="dark"]) .achieve-btn-certificate:focus {
-  background: #1e40af !important; /* Deep solid blue for active/click to prevent white washout */
-  color: #ffffff !important;
-  border-color: rgba(37, 99, 235, 0.5);
-  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.4) !important;
-  transform: translateY(0);
-}

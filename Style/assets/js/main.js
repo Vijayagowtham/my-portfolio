@@ -6,21 +6,6 @@
 (function() {
   "use strict";
 
-  /**
-   * Dark/Light mode toggle
-   */
-  const savedTheme = localStorage.getItem('theme') || 'dark';
-  document.documentElement.setAttribute('data-theme', savedTheme);
-
-  const themeToggleBtn = document.getElementById('theme-toggle');
-  if (themeToggleBtn) {
-    themeToggleBtn.addEventListener('click', function() {
-      const currentTheme = document.documentElement.getAttribute('data-theme');
-      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-      document.documentElement.setAttribute('data-theme', newTheme);
-      localStorage.setItem('theme', newTheme);
-    });
-  }
 
   /**
    * Apply .scrolled class to the body as the page is scrolled down
@@ -41,20 +26,28 @@
   const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
 
   function mobileNavToggle() {
-    document.querySelector('body').classList.toggle('mobile-nav-active');
+    const body = document.querySelector('body');
+    body.classList.toggle('mobile-nav-active');
     mobileNavToggleBtn.classList.toggle('bi-list');
     mobileNavToggleBtn.classList.toggle('bi-x');
+    
+    // Prevent body scroll when mobile menu is open
+    if (body.classList.contains('mobile-nav-active')) {
+      body.style.overflow = 'hidden';
+    } else {
+      body.style.overflow = '';
+    }
   }
   if (mobileNavToggleBtn) {
     mobileNavToggleBtn.addEventListener('click', mobileNavToggle);
   }
 
   /**
-   * Hide mobile nav on click outside
+   * Hide mobile nav on click outside or on overlay
    */
   document.addEventListener('click', function(e) {
     if (document.querySelector('body').classList.contains('mobile-nav-active')) {
-      if (!e.target.closest('.navmenu') && !e.target.closest('.mobile-nav-toggle')) {
+      if (!e.target.closest('.navmenu') && !e.target.closest('.mobile-nav-toggle') || e.target.classList.contains('mobile-nav-overlay')) {
         mobileNavToggle();
       }
     }
@@ -65,7 +58,7 @@
    */
   document.querySelectorAll('#navmenu a').forEach(navmenu => {
     navmenu.addEventListener('click', () => {
-      if (document.querySelector('.mobile-nav-active')) {
+      if (document.querySelector('body').classList.contains('mobile-nav-active')) {
         mobileNavToggle();
       }
     });
