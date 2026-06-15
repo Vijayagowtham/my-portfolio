@@ -237,32 +237,11 @@
   disableHeroAOS();
 
   /**
-   * Preloader with progress animation
+   * Trigger entrance animations immediately on load
    */
-  function initPreloader() {
-    const preloader = document.getElementById('page-preloader');
-    const progressFill = document.getElementById('preloader-progress-fill');
-    if (!preloader) return;
-
-    let progress = 0;
-    const interval = setInterval(() => {
-      progress += Math.random() * 15 + 5;
-      if (progress > 90) progress = 90;
-      if (progressFill) progressFill.style.width = progress + '%';
-    }, 200);
-
-    window.addEventListener('load', function() {
-      clearInterval(interval);
-      if (progressFill) progressFill.style.width = '100%';
-
-      setTimeout(() => {
-        preloader.classList.add('loaded');
-        setTimeout(() => { triggerEntranceAnimations(); }, 300);
-        setTimeout(() => { preloader.remove(); }, 1200);
-      }, 600);
-    });
-  }
-  initPreloader();
+  window.addEventListener('load', function() {
+    triggerEntranceAnimations();
+  });
 
   /**
    * Orchestrate entrance animations
